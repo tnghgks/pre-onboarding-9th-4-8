@@ -12,3 +12,8 @@ interface IPagination {
   page: number;
   setPage: Dispatch<React.SetStateAction<number>>;
 }
+
+interface IErrorFallback {
+  error: Error;
+  resetErrorBoundary: () => void;
+}
