@@ -31,6 +31,7 @@ const OrderList = () => {
     ['orderList'],
     orderListApi.getData,
     {
+      refetchInterval: 5000,
       select: (orderList) => {
         return orderList.filter((order) =>
           order.transaction_time.includes(getParams()),
