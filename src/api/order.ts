@@ -1,13 +1,13 @@
 import apiClient from './apiClient';
 
-export const getOrderData = async () => {
+export const getOrderData = async (offset: number, date: string) => {
   return await apiClient({
     method: 'get',
     url: '/mock/order',
     params: {
-      offset: 0,
+      offset,
+      date,
       limit: 50,
-      date: '2023-03-08',
     },
   });
 };
