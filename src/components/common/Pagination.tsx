@@ -10,7 +10,7 @@ const Pagination = ({ total, limit, page, setPage }: IPagination) => {
         aria-label="previous button"
         icon={<ArrowBackIcon />}
         onClick={() => setPage(page - 1)}
-        disabled={page === 1}
+        isDisabled={page === 1}
         variant="outline"
         colorScheme="blue"
       />
@@ -21,6 +21,8 @@ const Pagination = ({ total, limit, page, setPage }: IPagination) => {
             key={i + 1}
             onClick={() => setPage(i + 1)}
             aria-label={page === i + 1 ? 'current page' : 'page'}
+            colorScheme="blue"
+            variant={page === i + 1 ? 'solid' : 'outline'}
           >
             {i + 1}
           </Button>
@@ -29,7 +31,7 @@ const Pagination = ({ total, limit, page, setPage }: IPagination) => {
         aria-label="previous button"
         icon={<ArrowForwardIcon />}
         onClick={() => setPage(page + 1)}
-        disabled={page === pageLength}
+        isDisabled={page === pageLength}
         variant="outline"
         colorScheme="blue"
       />
