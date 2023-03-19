@@ -3,7 +3,7 @@ interface IOrderListProps {
 }
 
 interface ISortButtonProps {
-  onClick: () => void;
+  onClick?: () => void;
 }
 
 interface IPagination {

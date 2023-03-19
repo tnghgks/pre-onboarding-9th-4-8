@@ -13,37 +13,46 @@ import {
   Text,
   HStack,
 } from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { RepeatIcon } from '@chakra-ui/icons';
+import useQueryString from '@/lib/hooks/useQueryString';
 import orderListApi from '@/api/orderList';
 import SortButton from './common/SortButton';
 import Loader from './common/Loader';
 import Pagination from './common/Pagination';
+import OrderListFilter from './OrderListFilter';
 
 const OrderList = () => {
   const clientQuery = useQueryClient();
-  const [filteredData, setFilteredData] = useState<IOrderData[]>([]);
   const [page, setPage] = useState(1);
+  const { getParams, setParams } = useQueryString('filter');
   const { isLoading, data } = useQuery<IOrderData[]>(
     ['orderList'],
     orderListApi.getData,
+    {
+      select: (orderList) => {
+        return orderList.filter((order) =>
+          order.transaction_time.includes(getParams()),
+        );
+      },
+    },
   );
 
-  const changeToSort = () => {
-    return;
+  const paginatedData = useMemo(() => {
+    if (!data) return [];
+
+    return data.slice((page - 1) * 50, (page - 1) * 50 + 50);
+  }, [data, page]);
+
+  const refetchOrderList = () => {
+    clientQuery.invalidateQueries({ queryKey: ['orderList'] });
   };
 
   useEffect(() => {
-    if (data) {
-      const filtered = data.slice((page - 1) * 50, (page - 1) * 50 + 50);
-      setFilteredData(filtered);
-    }
-  }, [data, page]);
-
-  const refetch = () => {
-    clientQuery.invalidateQueries({ queryKey: ['orderList'] });
-  };
+    // 요구 사항  2023-03-08 데이터를 보여줄 것
+    setParams('2023-03-08');
+  }, []);
 
   return (
     <>
@@ -57,9 +66,10 @@ const OrderList = () => {
               <IconButton
                 aria-label="refetch button"
                 icon={<RepeatIcon />}
-                onClick={refetch}
+                onClick={refetchOrderList}
               />
             </HStack>
+            <OrderListFilter />
           </HStack>
           <TableContainer w="100%">
             <Table variant="simple">
@@ -67,26 +77,24 @@ const OrderList = () => {
               <Thead>
                 <Tr>
                   <Th>
-                    <SortButton onClick={changeToSort}>주문 번호</SortButton>
+                    <SortButton>주문 번호</SortButton>
                   </Th>
                   <Th>
-                    <SortButton onClick={changeToSort}>
-                      거래일 & 거래시간
-                    </SortButton>
+                    <SortButton>거래일 & 거래시간</SortButton>
                   </Th>
                   <Th>
-                    <SortButton onClick={changeToSort}>주문 상태</SortButton>
+                    <SortButton>주문 상태</SortButton>
                   </Th>
                   <Th>
-                    <SortButton onClick={changeToSort}>주문자</SortButton>
+                    <SortButton>주문자</SortButton>
                   </Th>
                   <Th>
-                    <SortButton onClick={changeToSort}>금액</SortButton>
+                    <SortButton>금액</SortButton>
                   </Th>
                 </Tr>
               </Thead>
               <Tbody>
-                {filteredData.map((item: IOrderData) => (
+                {paginatedData.map((item: IOrderData) => (
                   <Tr key={item.id}>
                     <Td>{item.id}</Td>
                     <Td>{item.transaction_time}</Td>
