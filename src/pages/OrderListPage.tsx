@@ -5,7 +5,7 @@ const OrderListPage = () => {
   return (
     <VStack as="main" w="100%">
       <Heading as="h1">주문목록 페이지</Heading>
-      <OrderList OrderData={[]} />
+      <OrderList />
     </VStack>
   );
 };
