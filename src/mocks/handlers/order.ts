@@ -6,10 +6,11 @@ export const orderListHandlers = rest.get('/mock/order', (req, res, ctx) => {
   const limit = Number(req.url.searchParams.get('limit'));
   const date = req.url.searchParams.get('date');
 
-  const dataOfSelectedDate = mockData.filter(
-    (item) => item.transaction_time.split(' ')[0] === date,
-  );
-  const slicedData = dataOfSelectedDate.splice(offset * limit, limit);
+  const dataOfSelectedDate = date
+    ? mockData.filter((item) => item.transaction_time.split(' ')[0] === date)
+    : mockData;
+
+  const slicedData = [...dataOfSelectedDate].splice(offset * limit, limit);
 
   return res(
     ctx.json({ order: slicedData, orderCount: dataOfSelectedDate.length }),

@@ -6,8 +6,11 @@ const Router = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/order" element={<OrderListPage />} />
-        <Route path="/*" element={<Navigate to="/order" replace={true} />} />
+        <Route path="/admin/order" element={<OrderListPage />} />
+        <Route
+          path="/*"
+          element={<Navigate to="/admin/order" replace={true} />}
+        />
       </Route>
     </Routes>
   );

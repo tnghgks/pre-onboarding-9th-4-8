@@ -1,6 +1,6 @@
 import apiClient from './apiClient';
 
-export const getOrderData = async (offset: number, date: string) => {
+export const getOrderData = async (offset: number, date: string | null) => {
   return await apiClient({
     method: 'get',
     url: '/mock/order',
