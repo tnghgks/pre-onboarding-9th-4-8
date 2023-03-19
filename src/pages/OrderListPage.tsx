@@ -22,19 +22,21 @@ import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 import { useGetOrderData } from '@/queries/orderQuery';
 
 const OrderListPage = () => {
-  const navigate = useNavigate();
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const PAGE = Number(searchParams.get('page') || 1);
+  const DATE = searchParams.get('date') || '2023-03-08';
 
-  console.log(PAGE);
+  const { data, isLoading, isError } = useGetOrderData(PAGE, DATE);
 
-  const { data, isLoading, isError } = useGetOrderData(PAGE, '2023-03-08');
-
-  const onPagination = (pageNum: number) => {
-    navigate(`/order?page=${pageNum + 1}`);
+  const onChangePage = (pageNum: number) => {
+    searchParams.set('page', String(pageNum + 1));
+    setSearchParams(searchParams);
   };
 
-  console.log(data);
+  const onChangeDate = (event: React.ChangeEvent<HTMLInputElement>) => {
+    searchParams.set('date', event.target.value);
+    setSearchParams(searchParams);
+  };
 
   if (isLoading) return <>Loading..</>;
   return (
@@ -44,6 +46,8 @@ const OrderListPage = () => {
         size="md"
         type="date"
         bg={'white'}
+        value={DATE}
+        onChange={onChangeDate}
       />
       <TableContainer
         bg="white"
@@ -93,7 +97,7 @@ const OrderListPage = () => {
                 colorScheme="teal"
                 size="sm"
                 key={num}
-                onClick={() => onPagination(num)}
+                onClick={() => onChangePage(num)}
               >
                 {num + 1}
               </Button>
