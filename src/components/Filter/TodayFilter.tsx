@@ -1,15 +1,23 @@
 import { FormControl, FormLabel, Switch } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useQueryString from '@/lib/hooks/useQueryString';
 
 const TodayFilter = () => {
   const { getParams, setParams } = useQueryString('filter');
-  const [toggle, setToggle] = useState(getParams() ? true : false);
+  const [toggle, setToggle] = useState(false);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setToggle((prev) => !prev);
     return e.target.checked ? setParams('2023-03-08') : setParams('');
   };
+
+  useEffect(() => {
+    if (getParams()) {
+      setToggle(true);
+    } else {
+      setToggle(false);
+    }
+  }, [getParams]);
 
   return (
     <FormControl display="flex" alignItems="center">

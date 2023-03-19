@@ -48,7 +48,7 @@ const OrderList = () => {
   useEffect(() => {
     // 요구 사항  2023-03-08 데이터를 보여줄 것
     setParams('2023-03-08');
-  }, [setParams]);
+  }, []);
 
   return (
     <>
