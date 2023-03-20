@@ -1,7 +1,9 @@
+import { IOrderItem } from '@/interface/main';
+
 const maxDate = (dates: Date[]) => new Date(Math.max(...dates.map(Number)));
 const minDate = (dates: Date[]) => new Date(Math.min(...dates.map(Number)));
 
-export const generateStartAndEndDate = (data: any[]) => {
+export const generateStartAndEndDate = (data: IOrderItem[]) => {
   const dateList = data.map(
     ({ transaction_time }) => new Date(transaction_time),
   );

@@ -29,13 +29,14 @@ import { IoIosPeople } from 'react-icons/io';
 import { TfiMoney } from 'react-icons/tfi';
 import { useGetOrderData } from '@/queries/orderQuery';
 import LoadingFallback from '@/components/LoadingFallback';
+import { IOrderItem } from '@/interface/main';
 
 const OrderListPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const PAGE = Number(searchParams.get('page') || 1);
   const DATE = searchParams.get('date');
 
-  const { data, isLoading } = useGetOrderData(PAGE, DATE);
+  const { data, isLoading, isError } = useGetOrderData(PAGE, DATE);
 
   const onChangePage = (pageNum: number) => {
     searchParams.set('page', String(pageNum + 1));
@@ -65,6 +66,7 @@ const OrderListPage = () => {
   };
 
   if (isLoading) return <LoadingFallback />;
+  if (isError) return <>Error</>;
 
   const stats = [
     {
@@ -83,14 +85,14 @@ const OrderListPage = () => {
     },
     {
       label: 'Complete',
-      stat: data.order.filter((item: any) => item.status).length,
+      stat: data.order.filter((item: IOrderItem) => item.status).length,
       icon: CheckIcon,
       iconColor: 'green.500',
       helpText: 'per Page',
     },
     {
       label: 'Incomplete',
-      stat: data.order.filter((item: any) => !item.status).length,
+      stat: data.order.filter((item: IOrderItem) => !item.status).length,
       icon: WarningIcon,
       iconColor: 'orange.500',
       helpText: 'per Page',
@@ -163,7 +165,7 @@ const OrderListPage = () => {
               </Tr>
             </Thead>
             <Tbody>
-              {data.order.map((orderItem: any) => {
+              {data.order.map((orderItem: IOrderItem) => {
                 return (
                   <Tr key={orderItem.id}>
                     <Td>{orderItem.id}</Td>
