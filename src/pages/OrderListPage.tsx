@@ -1,4 +1,3 @@
-import { useSearchParams } from 'react-router-dom';
 import {
   Table,
   Thead,
@@ -30,40 +29,11 @@ import { TfiMoney } from 'react-icons/tfi';
 import { useGetOrderData } from '@/queries/orderQuery';
 import LoadingFallback from '@/components/LoadingFallback';
 import { IOrderItem } from '@/interface/main';
+import useSetParams from '@/lib/hooks/useSetParams';
 
 const OrderListPage = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const PAGE = Number(searchParams.get('page') || 1);
-  const DATE = searchParams.get('date');
-
+  const { PAGE, DATE, onSetParams } = useSetParams();
   const { data, isLoading, isError } = useGetOrderData(PAGE, DATE);
-
-  const onChangePage = (pageNum: number) => {
-    searchParams.set('page', String(pageNum + 1));
-    setSearchParams(searchParams);
-    window.scrollTo(0, 0);
-  };
-
-  const onClickTodayOrder = () => {
-    searchParams.set('page', '1');
-    searchParams.set('date', '2023-03-08');
-    setSearchParams(searchParams);
-    window.scrollTo(0, 0);
-  };
-
-  const onClickTotalOrder = () => {
-    searchParams.set('page', '1');
-    searchParams.set('date', '');
-    setSearchParams(searchParams);
-    window.scrollTo(0, 0);
-  };
-
-  const onChangeDate = (event: React.ChangeEvent<HTMLInputElement>) => {
-    searchParams.set('page', '1');
-    searchParams.set('date', event.target.value);
-    setSearchParams(searchParams);
-    window.scrollTo(0, 0);
-  };
 
   if (isLoading) return <LoadingFallback />;
   if (isError) return <>Error</>;
@@ -131,7 +101,7 @@ const OrderListPage = () => {
           type="date"
           border="hidden"
           value={DATE}
-          onChange={onChangeDate}
+          onChange={(event) => onSetParams({ event })}
         />
       )}
       <Box bg="white" w="100%" borderRadius="2xl" p="1em 2em">
@@ -141,10 +111,20 @@ const OrderListPage = () => {
           </Box>
           <Spacer />
           <ButtonGroup variant="outline" spacing="4">
-            <Button colorScheme="blue" size="sm" onClick={onClickTotalOrder}>
+            <Button
+              colorScheme="blue"
+              size="sm"
+              onClick={() => onSetParams({ pageValue: 1, dateValue: '' })}
+            >
               전체 주문보기
             </Button>
-            <Button colorScheme="blue" size="sm" onClick={onClickTodayOrder}>
+            <Button
+              colorScheme="blue"
+              size="sm"
+              onClick={() =>
+                onSetParams({ pageValue: 1, dateValue: '2023-03-08' })
+              }
+            >
               오늘의 주문보기
             </Button>
           </ButtonGroup>
@@ -196,7 +176,7 @@ const OrderListPage = () => {
                 colorScheme="blue"
                 size="sm"
                 key={num}
-                onClick={() => onChangePage(num)}
+                onClick={() => onSetParams({ pageValue: num + 1 })}
                 variant={PAGE === num + 1 ? 'solid' : 'outline'}
               >
                 {num + 1}
