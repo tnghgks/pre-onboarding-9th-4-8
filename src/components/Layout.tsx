@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router-dom';
-import { Container } from '@chakra-ui/react';
+import { Container, Flex } from '@chakra-ui/react';
 
 const Layout = () => {
   return (
     <Container maxW="80%" centerContent padding="3em 0">
-      <Outlet />
+      <Flex gap={5} flexDirection="column" w="100%">
+        <Outlet />
+      </Flex>
     </Container>
   );
 };

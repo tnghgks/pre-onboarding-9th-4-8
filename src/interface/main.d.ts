@@ -6,3 +6,16 @@ export interface IOrderItem {
   status: boolean;
   transaction_time: string;
 }
+
+export interface IOrderInfo {
+  endDate: string;
+  startDate: string;
+  totalCount: number;
+  totalCurrency: number;
+}
+
+export interface IOnSetParams {
+  pageValue?: number;
+  dateValue?: string;
+  event?: React.ChangeEvent<HTMLInputElement>;
+}
