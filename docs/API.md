@@ -1,4 +1,4 @@
-# API Specification
+# Mock API Specification
 
 ## 주문 목록 불러오기
 
@@ -14,14 +14,14 @@
 | -------- | ------- | --------------------------------------------- |
 | `offset` | integer | 주문 목록의 오프셋/건너뛰기 (페이지 번호 - 1) |
 | `limit`  | integer | 반환된 주문 목록 수 제한                      |
-| `date`   | string  | 날짜별 필터링 (yyyy-mm-dd)                    |
+| `date`   | string  | 날짜 (yyyy-mm-dd), 빈값 or null이면 전체 날짜             |
 
 ### Response
 
 | Name         | type    | Description  |
 | ------------ | ------- | ------------ |
 | `order`      | order[] | 주문 목록    |
-| `orderCount` | integer | 총 주문 수량 |
+| `orderInfo` | integer | 총 주문 수량, 총 주문 금액, 시작 날짜, 끝 날짜  |
 
 ### Sample
 
@@ -55,6 +55,11 @@ params: {
             "currency": "$50.25"
         }
     ],
-    "orderCount": 500
+    "orderCount": {
+        endDate: "2023-3-8",
+        startDate: "2023-3-8",
+        totalCount: 267,
+        totalCurrency: 13153.619999999992,
+    }
 }
 ```
