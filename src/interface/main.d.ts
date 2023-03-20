@@ -19,3 +19,7 @@ export interface IOnSetParams {
   dateValue?: string;
   event?: React.ChangeEvent<HTMLInputElement>;
 }
+
+export interface IErrorFallbackProps {
+  resetErrorBoundary: (...args: unknown[]) => void;
+}

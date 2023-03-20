@@ -14,6 +14,7 @@ const TablePagination = () => {
         Math.ceil(data.orderInfo.totalCount / ITEMS_PER_PAGE),
       ).map((num) => (
         <Button
+          type="button"
           colorScheme="blue"
           size="sm"
           key={num}
