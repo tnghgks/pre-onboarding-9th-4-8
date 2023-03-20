@@ -1,4 +1,5 @@
 import { IOrderItem } from '@/interface/main';
+import { formatDate } from './formattingHelper';
 
 const maxDate = (dates: Date[]) => new Date(Math.max(...dates.map(Number)));
 const minDate = (dates: Date[]) => new Date(Math.min(...dates.map(Number)));
@@ -8,13 +9,10 @@ export const generateStartAndEndDate = (data: IOrderItem[]) => {
     ({ transaction_time }) => new Date(transaction_time),
   );
 
-  const min = minDate(dateList);
-  const startDate = `${min.getFullYear()}-${
-    min.getMonth() + 1
-  }-${min.getDate()}`;
-
-  const max = maxDate(dateList);
-  const endDate = `${max.getFullYear()}-${max.getMonth() + 1}-${max.getDate()}`;
+  const startDate = formatDate(minDate(dateList));
+  const endDate = formatDate(maxDate(dateList));
 
   return { startDate, endDate };
 };
+
+export const generateZeroToNArr = (n: number) => Array.from(Array(n).keys());

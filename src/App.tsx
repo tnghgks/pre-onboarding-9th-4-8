@@ -5,8 +5,11 @@ import queryClient from '@/queries/queryClient';
 import { worker } from '@/mocks/browser';
 import { theme } from '@/lib/styles/theme';
 import Router from './Router';
+import { IS_MOCK } from './constants/config';
 
-worker.start();
+if (IS_MOCK) {
+  worker.start();
+}
 
 const App = () => {
   return (

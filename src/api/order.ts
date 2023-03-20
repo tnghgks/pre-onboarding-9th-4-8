@@ -1,3 +1,4 @@
+import { ITEMS_PER_PAGE } from '@/constants/units';
 import apiClient from './apiClient';
 
 export const getOrderData = async (offset: number, date: string | null) => {
@@ -7,7 +8,7 @@ export const getOrderData = async (offset: number, date: string | null) => {
     params: {
       offset,
       date,
-      limit: 50,
+      limit: ITEMS_PER_PAGE,
     },
   });
 };

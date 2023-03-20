@@ -30,10 +30,19 @@ import { useGetOrderData } from '@/queries/orderQuery';
 import LoadingFallback from '@/components/LoadingFallback';
 import { IOrderItem } from '@/interface/main';
 import useSetParams from '@/lib/hooks/useSetParams';
+import { ITEMS_PER_PAGE } from '@/constants/units';
+import { IS_MOCK, TEMP_TODAY } from '@/constants/config';
+import {
+  formatDate,
+  formatNumToDollar,
+  formatPageInfo,
+} from '@/lib/utils/formattingHelper';
+import { generateZeroToNArr } from '@/lib/utils/generator';
 
 const OrderListPage = () => {
   const { PAGE, DATE, onSetParams } = useSetParams();
   const { data, isLoading, isError } = useGetOrderData(PAGE, DATE);
+  const TODAY = IS_MOCK ? TEMP_TODAY : formatDate(new Date());
 
   if (isLoading) return <LoadingFallback />;
   if (isError) return <>Error</>;
@@ -48,7 +57,7 @@ const OrderListPage = () => {
     },
     {
       label: 'Total Currency',
-      stat: `$ ${data.orderInfo.totalCurrency.toLocaleString('en')}`,
+      stat: formatNumToDollar(data.orderInfo.totalCurrency),
       icon: TfiMoney,
       iconColor: 'blue.900',
       helpText: `${data.orderInfo.startDate} - ${data.orderInfo.endDate}`,
@@ -87,7 +96,7 @@ const OrderListPage = () => {
               <Stat>
                 <StatLabel>{stat.label}</StatLabel>
                 <StatNumber>{stat.stat}</StatNumber>
-                <StatHelpText>{stat?.helpText}</StatHelpText>
+                <StatHelpText>{stat.helpText}</StatHelpText>
               </Stat>
             </Flex>
           </Box>
@@ -121,9 +130,7 @@ const OrderListPage = () => {
             <Button
               colorScheme="blue"
               size="sm"
-              onClick={() =>
-                onSetParams({ pageValue: 1, dateValue: '2023-03-08' })
-              }
+              onClick={() => onSetParams({ pageValue: 1, dateValue: TODAY })}
             >
               오늘의 주문보기
             </Button>
@@ -132,8 +139,11 @@ const OrderListPage = () => {
         <TableContainer>
           <Table variant="simple">
             <TableCaption>
-              Showing {PAGE * 50 - 49} - {PAGE * 50 - 50 + data.order.length}{' '}
-              out of {data.orderInfo.totalCount}
+              {formatPageInfo(
+                PAGE,
+                data.order.length,
+                data.orderInfo.totalCount,
+              )}
             </TableCaption>
             <Thead>
               <Tr>
@@ -151,9 +161,20 @@ const OrderListPage = () => {
                     <Td>{orderItem.id}</Td>
                     <Td>
                       {orderItem.status ? (
-                        <Icon as={CheckIcon} w={5} h={5} color="green.500" />
+                        <Flex gap={1}>
+                          <Icon as={CheckIcon} w={5} h={5} color="green.500" />
+                          Complete
+                        </Flex>
                       ) : (
-                        <Icon as={WarningIcon} w={5} h={5} color="orange.500" />
+                        <Flex gap={1}>
+                          <Icon
+                            as={WarningIcon}
+                            w={5}
+                            h={5}
+                            color="orange.500"
+                          />
+                          Incomplete
+                        </Flex>
                       )}
                     </Td>
                     <Td>
@@ -168,21 +189,19 @@ const OrderListPage = () => {
           </Table>
         </TableContainer>
         <Stack spacing={2} direction="row" align="center">
-          {Array.from(
-            Array(Math.ceil(data.orderInfo.totalCount / 50)).keys(),
-          ).map((num) => {
-            return (
-              <Button
-                colorScheme="blue"
-                size="sm"
-                key={num}
-                onClick={() => onSetParams({ pageValue: num + 1 })}
-                variant={PAGE === num + 1 ? 'solid' : 'outline'}
-              >
-                {num + 1}
-              </Button>
-            );
-          })}
+          {generateZeroToNArr(
+            Math.ceil(data.orderInfo.totalCount / ITEMS_PER_PAGE),
+          ).map((num) => (
+            <Button
+              colorScheme="blue"
+              size="sm"
+              key={num}
+              onClick={() => onSetParams({ pageValue: num + 1 })}
+              variant={PAGE === num + 1 ? 'solid' : 'outline'}
+            >
+              {num + 1}
+            </Button>
+          ))}
         </Stack>
       </Box>
     </Flex>

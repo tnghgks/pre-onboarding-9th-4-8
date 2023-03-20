@@ -1,6 +1,6 @@
 import { rest } from 'msw';
-import { formatDollorToNumber } from '@/lib/utils/formattingHelper';
-import { generateStartAndEndDate } from '@/lib/utils/generateDate';
+import { formatDollarToNumber } from '@/lib/utils/formattingHelper';
+import { generateStartAndEndDate } from '@/lib/utils/generator';
 import mockData from '../storage/mock_data.json';
 
 export const orderListHandlers = rest.get('/mock/order', (req, res, ctx) => {
@@ -20,7 +20,7 @@ export const orderListHandlers = rest.get('/mock/order', (req, res, ctx) => {
       orderInfo: {
         totalCount: dataOfSelectedDate.length,
         totalCurrency: dataOfSelectedDate.reduce(
-          (acc, cur) => acc + formatDollorToNumber(cur.currency),
+          (acc, cur) => acc + formatDollarToNumber(cur.currency),
           0,
         ),
         startDate,
