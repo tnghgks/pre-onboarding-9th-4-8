@@ -14,6 +14,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Tooltip,
 } from '@chakra-ui/react';
 import { Search2Icon, RepeatIcon } from '@chakra-ui/icons';
 import { FiFilter } from 'react-icons/fi';
@@ -77,12 +78,15 @@ const TableController = () => {
 
         <ButtonGroup>
           <Menu>
-            <MenuButton
-              as={IconButton}
-              size="lg"
-              aria-label="Options"
-              icon={<FiFilter />}
-            />
+            <Tooltip label="Filter by status">
+              <MenuButton
+                as={IconButton}
+                size="lg"
+                aria-label="Options"
+                icon={<FiFilter />}
+              />
+            </Tooltip>
+
             <MenuList>
               <MenuItem onClick={() => setParams('filter', 'complete')}>
                 Only Complete
@@ -92,19 +96,23 @@ const TableController = () => {
               </MenuItem>
             </MenuList>
           </Menu>
-          <IconButton
-            ref={btnRef}
-            onClick={onOpen}
-            size="lg"
-            aria-label="Search customer-name"
-            icon={<Search2Icon />}
-          />
-          <IconButton
-            onClick={deleteAllParams}
-            size="lg"
-            aria-label="Initialize params"
-            icon={<RepeatIcon />}
-          />
+          <Tooltip label="Search customer">
+            <IconButton
+              ref={btnRef}
+              onClick={onOpen}
+              size="lg"
+              aria-label="Search customer-name"
+              icon={<Search2Icon />}
+            />
+          </Tooltip>
+          <Tooltip label="Initialize query">
+            <IconButton
+              onClick={deleteAllParams}
+              size="lg"
+              aria-label="Initialize params"
+              icon={<RepeatIcon />}
+            />
+          </Tooltip>
         </ButtonGroup>
       </Flex>
 
