@@ -1,16 +1,6 @@
 import {
-  Button,
-  Drawer,
-  DrawerBody,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerContent,
-  DrawerCloseButton,
   useDisclosure,
   Input,
-  ListItem,
-  UnorderedList,
   Switch,
   FormControl,
   FormLabel,
@@ -22,31 +12,15 @@ import {
 } from '@chakra-ui/react';
 import { Search2Icon } from '@chakra-ui/icons';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
-import useSetParams from '@/lib/hooks/useSetParams';
+import useQueryString from '@/lib/hooks/useQueryString';
 import { TODAY } from '@/constants/config';
-import useGetOrderData from '@/lib/hooks/useGetOrderData';
-import useInput from '@/lib/hooks/useInput';
-import { IOrderItem } from '@/interface/main';
-import DatePicker from './DatePicker';
+import SearchSideDrawer from './SearchSideDrawer';
 
 const TableController = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  const { currentPage, currentDate, onSetParams } = useSetParams();
-  const { data } = useGetOrderData(currentPage, currentDate);
-
-  const [searchName, onChangeSearchName] = useInput('');
-
-  const filterdCustomers = data.order.filter((item: IOrderItem) =>
-    item.customer_name
-      .replace(' ', '')
-      .toLocaleLowerCase()
-      .includes(searchName.replace(' ', '').toLocaleLowerCase()),
-  );
-
-  console.log(filterdCustomers);
+  const { currentDate, onSetParams } = useQueryString();
 
   const onToggleDate = (event: React.ChangeEvent<HTMLInputElement>) => {
     onSetParams({ pageValue: 1, dateValue: event.target.checked ? TODAY : '' });
@@ -107,7 +81,7 @@ const TableController = () => {
           <Flex alignItems="flex-end" justifyContent="flex-end">
             {currentDate && (
               <Input
-                placeholder="Select Date and Time"
+                placeholder="Select Date"
                 size="md"
                 bg="white"
                 type="date"
@@ -120,44 +94,7 @@ const TableController = () => {
         </Stack>
       </Flex>
 
-      <Drawer
-        isOpen={isOpen}
-        placement="right"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerCloseButton />
-          <DrawerHeader>고객 이름으로 검색하기</DrawerHeader>
-
-          <DrawerBody>
-            <Input
-              type="text"
-              placeholder="Customer name"
-              value={searchName}
-              onChange={onChangeSearchName}
-            />
-
-            <UnorderedList>
-              {filterdCustomers.map((customer: IOrderItem) => (
-                <ListItem key={customer.id}>
-                  <Link to={`/admin/order?customer=${customer.customer_name}`}>
-                    {customer.customer_name}
-                  </Link>
-                </ListItem>
-              ))}
-            </UnorderedList>
-          </DrawerBody>
-
-          <DrawerFooter>
-            <Button variant="outline" mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme="gray">Save</Button>
-          </DrawerFooter>
-        </DrawerContent>
-      </Drawer>
+      <SearchSideDrawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
     </>
   );
 };

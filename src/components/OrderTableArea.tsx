@@ -15,15 +15,19 @@ import {
 } from '@chakra-ui/react';
 import { CheckIcon, WarningIcon, ArrowUpDownIcon } from '@chakra-ui/icons';
 import { IOrderItem } from '@/interface/main';
-import useSetParams from '@/lib/hooks/useSetParams';
+import useQueryString from '@/lib/hooks/useQueryString';
 import { formatPageInfo } from '@/lib/utils/formattingHelper';
-import useGetOrderData from '@/lib/hooks/useGetOrderData';
+import useOrderQuery from '@/lib/hooks/useOrderQuery';
 import TablePagination from './TablePagination';
 import TableController from './TableController';
 
 const OrderTableArea = () => {
-  const { currentPage, currentDate } = useSetParams();
-  const { data } = useGetOrderData(currentPage, currentDate);
+  const { currentPage, currentDate, currentCustomer } = useQueryString();
+  const [orderResult] = useOrderQuery(
+    currentPage,
+    currentDate,
+    currentCustomer,
+  );
 
   return (
     <Box bg="white" w="100%" borderRadius="md" boxShadow="lg">
@@ -38,8 +42,8 @@ const OrderTableArea = () => {
           <TableCaption>
             {formatPageInfo(
               currentPage,
-              data.order.length,
-              data.orderInfo.totalCount,
+              orderResult.data.order.length,
+              orderResult.data.orderInfo.totalCount,
             )}
           </TableCaption>
           <Thead>
@@ -67,14 +71,14 @@ const OrderTableArea = () => {
             </Tr>
           </Thead>
           <Tbody>
-            {data.order.map((orderItem: IOrderItem) => {
+            {orderResult.data.order.map((orderItem: IOrderItem) => {
               return (
                 <Tr key={orderItem.id}>
                   <Td>
                     {orderItem.status ? (
-                      <Icon as={CheckIcon} w={5} h={5} color="green.500" />
+                      <Icon as={CheckIcon} w={4} h={4} color="green.500" />
                     ) : (
-                      <Icon as={WarningIcon} w={5} h={5} color="orange.500" />
+                      <Icon as={WarningIcon} w={4} h={4} color="orange.500" />
                     )}
                   </Td>
                   <Td>{orderItem.id}</Td>
