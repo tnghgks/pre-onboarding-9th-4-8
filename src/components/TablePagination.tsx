@@ -15,7 +15,7 @@ const TablePagination = () => {
       ).map((num) => (
         <Button
           type="button"
-          colorScheme="blue"
+          colorScheme="gray"
           size="sm"
           key={num}
           onClick={() => onSetParams({ pageValue: num + 1 })}

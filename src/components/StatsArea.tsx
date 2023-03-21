@@ -8,6 +8,8 @@ import {
   Center,
   Icon,
   Box,
+  Heading,
+  Divider,
 } from '@chakra-ui/react';
 import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 import { IoIosPeople } from 'react-icons/io';
@@ -52,28 +54,33 @@ const StatsArea = () => {
     },
   ];
   return (
-    <StatGroup>
-      {stats.map((stat) => (
-        <Box bg="white" borderRadius="2xl" p="1em 1.5em" key={stat.label}>
-          <Flex alignItems="ceter" justifyContent="center" gap={4}>
-            <Center>
-              <Icon
-                as={stat.icon}
-                w={8}
-                h={8}
-                color={stat.iconColor}
-                alignContent="center"
-              />
-            </Center>
-            <Stat>
-              <StatLabel>{stat.label}</StatLabel>
-              <StatNumber>{stat.stat}</StatNumber>
-              <StatHelpText>{stat.helpText}</StatHelpText>
-            </Stat>
-          </Flex>
-        </Box>
-      ))}
-    </StatGroup>
+    <Box bg="white" w="100%" borderRadius="md" boxShadow="lg">
+      <Box p="1em 2em">
+        <Heading size="md">Overview</Heading>
+      </Box>
+      <StatGroup p="1.5em 1em">
+        {stats.map((stat) => (
+          <Box key={stat.label}>
+            <Flex alignItems="ceter" justifyContent="center" gap={4}>
+              <Center>
+                <Icon
+                  as={stat.icon}
+                  w={8}
+                  h={8}
+                  color={stat.iconColor}
+                  alignContent="center"
+                />
+              </Center>
+              <Stat>
+                <StatLabel>{stat.label}</StatLabel>
+                <StatNumber>{stat.stat}</StatNumber>
+                <StatHelpText>{stat.helpText}</StatHelpText>
+              </Stat>
+            </Flex>
+          </Box>
+        ))}
+      </StatGroup>
+    </Box>
   );
 };
 

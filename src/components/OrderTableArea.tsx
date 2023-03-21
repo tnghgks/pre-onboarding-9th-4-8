@@ -9,11 +9,11 @@ import {
   TableContainer,
   Icon,
   Box,
-  Spacer,
-  Flex,
   Heading,
+  Center,
+  IconButton,
 } from '@chakra-ui/react';
-import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
+import { CheckIcon, WarningIcon, ArrowUpDownIcon } from '@chakra-ui/icons';
 import { IOrderItem } from '@/interface/main';
 import useSetParams from '@/lib/hooks/useSetParams';
 import { formatPageInfo } from '@/lib/utils/formattingHelper';
@@ -26,15 +26,14 @@ const OrderTableArea = () => {
   const { data } = useGetOrderData(currentPage, currentDate);
 
   return (
-    <Box bg="white" w="100%" borderRadius="2xl" p="1em 2em">
-      <Flex minWidth="max-content" alignItems="center" gap="2">
-        <Box p="2">
-          <Heading size="md">주문 테이블</Heading>
-        </Box>
-        <Spacer />
+    <Box bg="white" w="100%" borderRadius="md" boxShadow="lg">
+      <Box p="1em 2em">
+        <Heading size="md">Order Table</Heading>
+      </Box>
+      <Box p="1em 2em">
         <TableController />
-      </Flex>
-      <TableContainer>
+      </Box>
+      <TableContainer p="1em 2em">
         <Table variant="simple">
           <TableCaption>
             {formatPageInfo(
@@ -45,10 +44,25 @@ const OrderTableArea = () => {
           </TableCaption>
           <Thead>
             <Tr>
-              <Th>Order ID</Th>
               <Th>Status</Th>
+
+              <Th>
+                Order ID&nbsp;&nbsp;
+                <IconButton
+                  size="xs"
+                  aria-label="Search database"
+                  icon={<ArrowUpDownIcon />}
+                />
+              </Th>
               <Th>Customer Name / ID</Th>
-              <Th>Time</Th>
+              <Th>
+                Time&nbsp;&nbsp;
+                <IconButton
+                  size="xs"
+                  aria-label="Search database"
+                  icon={<ArrowUpDownIcon />}
+                />
+              </Th>
               <Th>Currency</Th>
             </Tr>
           </Thead>
@@ -56,20 +70,14 @@ const OrderTableArea = () => {
             {data.order.map((orderItem: IOrderItem) => {
               return (
                 <Tr key={orderItem.id}>
-                  <Td>{orderItem.id}</Td>
                   <Td>
                     {orderItem.status ? (
-                      <Flex gap={1}>
-                        <Icon as={CheckIcon} w={5} h={5} color="green.500" />
-                        Complete
-                      </Flex>
+                      <Icon as={CheckIcon} w={5} h={5} color="green.500" />
                     ) : (
-                      <Flex gap={1}>
-                        <Icon as={WarningIcon} w={5} h={5} color="orange.500" />
-                        Incomplete
-                      </Flex>
+                      <Icon as={WarningIcon} w={5} h={5} color="orange.500" />
                     )}
                   </Td>
+                  <Td>{orderItem.id}</Td>
                   <Td>
                     {orderItem.customer_name} / {orderItem.customer_id}
                   </Td>
@@ -81,7 +89,9 @@ const OrderTableArea = () => {
           </Tbody>
         </Table>
       </TableContainer>
-      <TablePagination />
+      <Center p="1em 2em">
+        <TablePagination />
+      </Center>
     </Box>
   );
 };
