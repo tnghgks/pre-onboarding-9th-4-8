@@ -50,17 +50,17 @@ const StatsArea = () => {
     },
     {
       label: 'Complete',
-      stat: data.order.filter((item: IOrderItem) => item.status).length,
+      stat: data.orderInfo.complete,
       icon: CheckIcon,
       iconColor: 'green.500',
-      helpText: 'per Page',
+      helpText: 'per Data',
     },
     {
       label: 'Incomplete',
-      stat: data.order.filter((item: IOrderItem) => !item.status).length,
+      stat: data.orderInfo.incomplete,
       icon: WarningIcon,
       iconColor: 'orange.500',
-      helpText: 'per Page',
+      helpText: 'per Data',
     },
   ];
   return (

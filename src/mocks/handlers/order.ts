@@ -39,6 +39,9 @@ export const orderListHandlers = [
           ),
           startDate,
           endDate,
+          complete: sortedData.filter((item: IOrderItem) => item.status).length,
+          incomplete: sortedData.filter((item: IOrderItem) => !item.status)
+            .length,
         },
       }),
     );
