@@ -30,6 +30,10 @@ const useSetParams = () => {
     window.scrollTo(0, 0);
   };
 
+  const resetParams = () => {
+    setSearchParams('');
+  };
+
   return {
     currentPage,
     currentDate,
@@ -37,6 +41,7 @@ const useSetParams = () => {
     currentReverse,
     currentSearch,
     onSetParams,
+    resetParams,
   };
 };
 

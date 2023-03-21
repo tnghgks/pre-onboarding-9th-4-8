@@ -3,7 +3,7 @@ import useSetParams from '@/lib/hooks/useSetParams';
 import { TODAY } from '@/constants/config';
 
 const TableController = () => {
-  const { onSetParams } = useSetParams();
+  const { onSetParams, resetParams } = useSetParams();
 
   const onSearch = (e: React.FormEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -28,6 +28,9 @@ const TableController = () => {
           onClick={() => onSetParams({ pageValue: 1, dateValue: TODAY })}
         >
           오늘의 주문보기
+        </Button>
+        <Button colorScheme="blue" size="sm" onClick={resetParams}>
+          필터 삭제
         </Button>
       </ButtonGroup>
       <FormControl
