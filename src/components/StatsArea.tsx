@@ -20,11 +20,11 @@ import useQueryString from '@/lib/hooks/useQueryString';
 import useOrderQuery from '@/lib/hooks/useOrderQuery';
 
 const StatsArea = () => {
-  const { currentPage, currentDate, currentCustomer } = useQueryString();
+  const { getParams } = useQueryString();
   const [orderResult] = useOrderQuery(
-    currentPage,
-    currentDate,
-    currentCustomer,
+    getParams('page'),
+    getParams('date'),
+    getParams('customer'),
   );
 
   const stats = [

@@ -12,7 +12,8 @@ export const generateStartAndEndDate = (data: IOrderItem[]) => {
   const startDate = formatDate(minDate(dateList));
   const endDate = formatDate(maxDate(dateList));
 
-  return { startDate, endDate };
+  return [startDate, endDate];
 };
 
-export const generateZeroToNArr = (n: number) => Array.from(Array(n).keys());
+export const generateOneToNArr = (n: number) =>
+  Array.from({ length: n }, (_, i) => i + 1);

@@ -9,7 +9,6 @@ export const orderListHandlers = [
     const limit = Number(req.url.searchParams.get('limit'));
     const date = req.url.searchParams.get('date');
     const customer = req.url.searchParams.get('customer');
-
     let copiedMockData = [...mockData];
 
     if (date) {
@@ -24,7 +23,10 @@ export const orderListHandlers = [
       );
     }
 
-    const { startDate, endDate } = generateStartAndEndDate(copiedMockData);
+    const [startDate, endDate] =
+      copiedMockData.length > 0
+        ? generateStartAndEndDate(copiedMockData)
+        : [date, date];
 
     return res(
       ctx.json({
@@ -35,8 +37,8 @@ export const orderListHandlers = [
             (acc, cur) => acc + formatDollarToNumber(cur.currency),
             0,
           ),
-          startDate: copiedMockData.length > 0 ? startDate : date,
-          endDate: copiedMockData.length > 0 ? endDate : date,
+          startDate,
+          endDate,
         },
       }),
     );

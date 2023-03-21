@@ -1,29 +1,37 @@
-import { useSearchParams } from 'react-router-dom';
-import { IOnSetParams } from '@/interface/main';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { paramsKeyType } from '@/interface/main';
 
 const useQueryString = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentPage = Number(searchParams.get('page')) || 1;
-  const currentDate = searchParams.get('date');
-  const currentCustomer = searchParams.get('customer');
+  const navigate = useNavigate();
 
-  const onSetParams = ({
-    pageValue,
-    dateValue,
-    customerValue,
-    event,
-  }: IOnSetParams) => {
-    if (pageValue !== undefined) searchParams.set('page', String(pageValue));
-    if (dateValue !== undefined) searchParams.set('date', String(dateValue));
-    if (customerValue !== undefined)
-      searchParams.set('customer', String(customerValue));
-    if (event) searchParams.set('date', String(event.target.value));
+  const getParams = (key: paramsKeyType) => {
+    if (key === 'page') return searchParams.get(key) || '1';
+    return searchParams.get(key) || '';
+  };
 
+  const setParams = (key: paramsKeyType, value: string) => {
+    searchParams.set(key, value);
     setSearchParams(searchParams);
     window.scrollTo(0, 0);
   };
 
-  return { currentPage, currentDate, currentCustomer, onSetParams };
+  const deleteParams = (key: paramsKeyType) => {
+    searchParams.delete(key);
+    setSearchParams(searchParams);
+    window.scrollTo(0, 0);
+  };
+
+  const deleteAllParams = () => {
+    navigate('/admin/order');
+  };
+
+  return {
+    getParams,
+    setParams,
+    deleteParams,
+    deleteAllParams,
+  };
 };
 
 export default useQueryString;

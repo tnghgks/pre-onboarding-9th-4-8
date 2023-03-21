@@ -22,11 +22,11 @@ import TablePagination from './TablePagination';
 import TableController from './TableController';
 
 const OrderTableArea = () => {
-  const { currentPage, currentDate, currentCustomer } = useQueryString();
+  const { getParams } = useQueryString();
   const [orderResult] = useOrderQuery(
-    currentPage,
-    currentDate,
-    currentCustomer,
+    getParams('page'),
+    getParams('date'),
+    getParams('customer'),
   );
 
   return (
@@ -41,7 +41,7 @@ const OrderTableArea = () => {
         <Table variant="simple">
           <TableCaption>
             {formatPageInfo(
-              currentPage,
+              Number(getParams('page')),
               orderResult.data.order.length,
               orderResult.data.orderInfo.totalCount,
             )}

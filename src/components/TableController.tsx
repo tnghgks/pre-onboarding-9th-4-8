@@ -9,8 +9,9 @@ import {
   Flex,
   Spacer,
   IconButton,
+  ButtonGroup,
 } from '@chakra-ui/react';
-import { Search2Icon } from '@chakra-ui/icons';
+import { Search2Icon, RepeatIcon } from '@chakra-ui/icons';
 import { useRef } from 'react';
 import useQueryString from '@/lib/hooks/useQueryString';
 import { TODAY } from '@/constants/config';
@@ -20,10 +21,11 @@ const TableController = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  const { currentDate, onSetParams } = useQueryString();
+  const { getParams, setParams, deleteAllParams } = useQueryString();
 
   const onToggleDate = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onSetParams({ pageValue: 1, dateValue: event.target.checked ? TODAY : '' });
+    deleteAllParams();
+    if (event.target.checked) setParams('date', TODAY);
   };
 
   return (
@@ -33,13 +35,21 @@ const TableController = () => {
         alignItems="flex-start"
         justifyContent="flex-start"
       >
-        <IconButton
-          ref={btnRef}
-          onClick={onOpen}
-          size="lg"
-          aria-label="Search customer-name"
-          icon={<Search2Icon />}
-        />
+        <ButtonGroup>
+          <IconButton
+            ref={btnRef}
+            onClick={onOpen}
+            size="lg"
+            aria-label="Search customer-name"
+            icon={<Search2Icon />}
+          />
+          <IconButton
+            onClick={deleteAllParams}
+            size="lg"
+            aria-label="Initialize params"
+            icon={<RepeatIcon />}
+          />
+        </ButtonGroup>
 
         <Spacer />
         <Stack gap={1}>
@@ -76,18 +86,22 @@ const TableController = () => {
                 Do you want to see Today`s order?
               </Highlight>
             </FormLabel>
-            <Switch id="today-order" onChange={onToggleDate} />
+            <Switch
+              id="today-order"
+              onChange={onToggleDate}
+              isChecked={!!getParams('date')}
+            />
           </FormControl>
           <Flex alignItems="flex-end" justifyContent="flex-end">
-            {currentDate && (
+            {getParams('date') && (
               <Input
                 placeholder="Select Date"
                 size="md"
                 bg="white"
                 type="date"
                 w="min"
-                value={currentDate}
-                onChange={(event) => onSetParams({ event })}
+                value={getParams('date')}
+                onChange={(event) => setParams('date', event.target.value)}
               />
             )}
           </Flex>

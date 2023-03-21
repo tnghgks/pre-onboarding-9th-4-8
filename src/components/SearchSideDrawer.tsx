@@ -12,7 +12,6 @@ import {
   UnorderedList,
   Highlight,
 } from '@chakra-ui/react';
-import { useNavigate } from 'react-router-dom';
 import useQueryString from '@/lib/hooks/useQueryString';
 import useOrderQuery from '@/lib/hooks/useOrderQuery';
 import useInput from '@/lib/hooks/useInput';
@@ -28,15 +27,14 @@ const SearchSideDrawer = ({
   onClose,
   btnRef,
 }: ISearchSideDrawerProps) => {
-  const navigate = useNavigate();
-  const { currentPage, currentDate, currentCustomer } = useQueryString();
+  const { getParams, setParams, deleteAllParams } = useQueryString();
   const [_, customersResult] = useOrderQuery(
-    currentPage,
-    currentDate,
-    currentCustomer,
+    getParams('page'),
+    getParams('date'),
+    getParams('customer'),
   );
 
-  const [searchName, onChangeSearchName] = useInput('');
+  const [searchName, onChangeSearchName, setSearchName] = useInput('');
 
   const filterdCustomers = customersResult.data.filter((customer: string) =>
     customer
@@ -44,6 +42,12 @@ const SearchSideDrawer = ({
       .toLocaleLowerCase()
       .includes(searchName.replace(' ', '').toLocaleLowerCase()),
   );
+
+  const onSearch = (name: string) => {
+    deleteAllParams();
+    setParams('customer', name);
+    setSearchName('');
+  };
 
   return (
     <Drawer
@@ -74,7 +78,7 @@ const SearchSideDrawer = ({
                 aria-hidden={true}
                 cursor="pointer"
                 p="0.2em 0"
-                onClick={() => navigate(`/admin/order?customer=${customer}`)}
+                onClick={() => onSearch(customer)}
               >
                 <Highlight
                   query={searchName}
