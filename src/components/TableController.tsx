@@ -54,25 +54,23 @@ const TableController = () => {
               id="today-order"
               onChange={(e) =>
                 e.target.checked
-                  ? setParams('date', TODAY)
-                  : deleteParams('date')
+                  ? (setParams('date', TODAY), deleteParams('page'))
+                  : (deleteParams('date'), deleteParams('page'))
               }
               isChecked={!!getParams('date')}
             />
           </FormControl>
-          <Flex alignItems="flex-end" justifyContent="flex-end">
-            {getParams('date') && (
-              <Input
-                placeholder="Select Date"
-                size="md"
-                bg="white"
-                type="date"
-                w="min"
-                value={getParams('date')}
-                onChange={(event) => setParams('date', event.target.value)}
-              />
-            )}
-          </Flex>
+          {getParams('date') && (
+            <Input
+              placeholder="Select Date"
+              size="md"
+              bg="white"
+              type="date"
+              w="min"
+              value={getParams('date')}
+              onChange={(event) => setParams('date', event.target.value)}
+            />
+          )}
         </Stack>
         <Spacer />
 
@@ -88,10 +86,20 @@ const TableController = () => {
             </Tooltip>
 
             <MenuList>
-              <MenuItem onClick={() => setParams('filter', 'complete')}>
+              <MenuItem
+                onClick={() => {
+                  setParams('filter', 'complete');
+                  deleteParams('page');
+                }}
+              >
                 Only Complete
               </MenuItem>
-              <MenuItem onClick={() => setParams('filter', 'incomplete')}>
+              <MenuItem
+                onClick={() => {
+                  setParams('filter', 'incomplete');
+                  deleteParams('page');
+                }}
+              >
                 Only Incomplete
               </MenuItem>
             </MenuList>

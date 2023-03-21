@@ -22,7 +22,7 @@ import TablePagination from './TablePagination';
 import TableController from './TableController';
 
 const OrderTableArea = () => {
-  const { getParams, setParams } = useQueryString();
+  const { getParams, setParams, deleteParams } = useQueryString();
   const [orderResult] = useOrderQuery(
     getParams('page'),
     getParams('date'),
@@ -57,7 +57,10 @@ const OrderTableArea = () => {
                   size="xs"
                   aria-label="Search database"
                   icon={<ArrowUpDownIcon />}
-                  onClick={() => setParams('sort', 'id-descending')}
+                  onClick={() => {
+                    setParams('sort', 'id-descending');
+                    deleteParams('page');
+                  }}
                 />
               </Th>
               <Th>Customer Name / ID</Th>
@@ -67,7 +70,10 @@ const OrderTableArea = () => {
                   size="xs"
                   aria-label="Search database"
                   icon={<ArrowUpDownIcon />}
-                  onClick={() => setParams('sort', 'time-descending')}
+                  onClick={() => {
+                    setParams('sort', 'time-descending');
+                    deleteParams('page');
+                  }}
                 />
               </Th>
               <Th>Currency</Th>
