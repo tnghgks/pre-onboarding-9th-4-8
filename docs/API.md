@@ -15,6 +15,10 @@
 | `offset` | integer | 주문 목록의 오프셋/건너뛰기 (페이지 번호 - 1) |
 | `limit`  | integer | 반환된 주문 목록 수 제한                      |
 | `date`   | string  | 날짜 (yyyy-mm-dd), 빈값 or null이면 전체 날짜             |
+| `customer`| string  | 고객 이름             |
+| `filter` | string   | `complete` or `incomplete`           |
+| `sort`   | string  | `id-descending` or `time-descending`          |
+
 
 ### Response
 
@@ -61,5 +65,35 @@ params: {
         totalCount: 267,
         totalCurrency: 13153.619999999992,
     }
+}
+```
+
+## 고객 명단 가져오기
+
+### Request
+
+#### URL
+
+- GET /mock/customers
+
+
+### Response
+
+| Name         | type    | Description  |
+| ------------ | ------- | ------------ |
+| `customers`  | string[] | 고객 명단    |
+
+### Sample
+
+```
+# Request
+GET http://localhost:3000/mock/customers
+
+
+# Response 200 OK
+{
+    "customers": [
+        'customers1', 'customers2', ..., 'customersN'
+    ],
 }
 ```
