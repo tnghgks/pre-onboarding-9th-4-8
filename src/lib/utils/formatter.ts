@@ -16,3 +16,6 @@ export const formatPageInfo = (
   `Showing ${currentPage * ITEMS_PER_PAGE - (ITEMS_PER_PAGE - 1)} - ${
     currentPage * ITEMS_PER_PAGE - ITEMS_PER_PAGE + currentLength
   } out of ${totalLength}`;
+
+export const formatPureString = (str: string) =>
+  str.replace(' ', '').toLocaleLowerCase();

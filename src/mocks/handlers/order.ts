@@ -1,5 +1,5 @@
 import { rest } from 'msw';
-import { formatDollarToNumber } from '@/lib/utils/formattingHelper';
+import { formatDollarToNumber } from '@/lib/utils/formatter';
 import { generateStartAndEndDate } from '@/lib/utils/generator';
 import mockData from '../storage/mock_data.json';
 

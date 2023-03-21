@@ -1,5 +1,5 @@
 import { IOrderItem } from '@/interface/main';
-import { formatDate } from './formattingHelper';
+import { formatDate } from './formatter';
 
 const maxDate = (dates: Date[]) => new Date(Math.max(...dates.map(Number)));
 const minDate = (dates: Date[]) => new Date(Math.min(...dates.map(Number)));

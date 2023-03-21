@@ -2,7 +2,7 @@ import { Button, Center, Heading, Stack, ButtonGroup } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { IErrorFallbackProps } from '@/interface/main';
 
-const ErrorFallback = ({ resetErrorBoundary }: IErrorFallbackProps) => {
+const ErrorFallback = ({ error, resetErrorBoundary }: IErrorFallbackProps) => {
   const navigate = useNavigate();
 
   const onRefresh = () => {
@@ -11,15 +11,15 @@ const ErrorFallback = ({ resetErrorBoundary }: IErrorFallbackProps) => {
   };
 
   return (
-    <Center gap={5}>
-      <Stack>
-        <Heading>There was an error!</Heading>
+    <Center>
+      <Stack gap={5}>
+        <Heading>{error.message}</Heading>
         <Center>
           <ButtonGroup spacing="2">
             <Button
               type="button"
               variant="outline"
-              colorScheme="yellow"
+              colorScheme="blue"
               onClick={resetErrorBoundary}
             >
               Try again
@@ -27,7 +27,7 @@ const ErrorFallback = ({ resetErrorBoundary }: IErrorFallbackProps) => {
             <Button
               type="button"
               variant="solid"
-              colorScheme="yellow"
+              colorScheme="blue"
               onClick={onRefresh}
             >
               새로고침

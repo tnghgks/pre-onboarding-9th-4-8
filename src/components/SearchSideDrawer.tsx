@@ -15,6 +15,7 @@ import {
 import useQueryString from '@/lib/hooks/useQueryString';
 import useOrderQuery from '@/lib/hooks/useOrderQuery';
 import useInput from '@/lib/hooks/useInput';
+import { formatPureString } from '@/lib/utils/formatter';
 
 export interface ISearchSideDrawerProps {
   isOpen: boolean;
@@ -38,10 +39,7 @@ const SearchSideDrawer = ({
   );
 
   const filterdCustomers = customersResult.data.filter((customer: string) =>
-    customer
-      .replace(' ', '')
-      .toLocaleLowerCase()
-      .includes(searchName.replace(' ', '').toLocaleLowerCase()),
+    formatPureString(customer).includes(formatPureString(searchName)),
   );
 
   const onSearch = (name: string) => {

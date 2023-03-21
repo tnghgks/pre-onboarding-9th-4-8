@@ -16,7 +16,7 @@ import {
 import { CheckIcon, WarningIcon, ArrowUpDownIcon } from '@chakra-ui/icons';
 import { IOrderItem } from '@/interface/main';
 import useQueryString from '@/lib/hooks/useQueryString';
-import { formatPageInfo } from '@/lib/utils/formattingHelper';
+import { formatPageInfo } from '@/lib/utils/formatter';
 import useOrderQuery from '@/lib/hooks/useOrderQuery';
 import TablePagination from './TablePagination';
 import TableController from './TableController';
@@ -51,7 +51,6 @@ const OrderTableArea = () => {
           <Thead>
             <Tr>
               <Th>Status</Th>
-
               <Th>
                 Order ID&nbsp;&nbsp;
                 <IconButton

@@ -13,7 +13,7 @@ import {
 import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 import { IoIosPeople } from 'react-icons/io';
 import { TfiMoney } from 'react-icons/tfi';
-import { formatNumToDollar } from '@/lib/utils/formattingHelper';
+import { formatNumToDollar } from '@/lib/utils/formatter';
 import { IOrderItem } from '@/interface/main';
 import useQueryString from '@/lib/hooks/useQueryString';
 import useOrderQuery from '@/lib/hooks/useOrderQuery';

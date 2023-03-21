@@ -1,5 +1,6 @@
 import { useSearchParams } from 'react-router-dom';
 import { paramsKeyType } from '@/interface/main';
+import { PARAMS_KEY } from '@/constants/config';
 
 const useQueryString = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,7 +23,6 @@ const useQueryString = () => {
   };
 
   const deleteAllParams = () => {
-    const PARAMS_KEY = ['date', 'page', 'customer', 'sort', 'filter'];
     PARAMS_KEY.forEach((key) => searchParams.delete(key));
     setSearchParams(searchParams);
     window.scrollTo(0, 0);

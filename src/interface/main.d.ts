@@ -23,6 +23,7 @@ export interface IOnSetParams {
 
 export interface IErrorFallbackProps {
   resetErrorBoundary: (...args: unknown[]) => void;
+  error: Error;
 }
 
 export type paramsKeyType = 'date' | 'page' | 'customer' | 'sort' | 'filter';
