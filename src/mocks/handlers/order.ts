@@ -35,8 +35,8 @@ export const orderListHandlers = [
             (acc, cur) => acc + formatDollarToNumber(cur.currency),
             0,
           ),
-          startDate: startDate || date,
-          endDate: endDate || date,
+          startDate: copiedMockData.length > 0 ? startDate : date,
+          endDate: copiedMockData.length > 0 ? endDate : date,
         },
       }),
     );
