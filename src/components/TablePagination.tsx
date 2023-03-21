@@ -11,6 +11,7 @@ const TablePagination = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
     onSetParams,
   } = useSetParams();
   const { data } = useGetOrderData(
@@ -19,6 +20,7 @@ const TablePagination = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
   );
 
   return (

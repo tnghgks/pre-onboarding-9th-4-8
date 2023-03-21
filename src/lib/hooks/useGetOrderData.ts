@@ -7,11 +7,12 @@ const useGetOrderData = (
   sortBy?: string,
   reverse = false,
   search?: string,
+  status?: string,
 ) => {
   return useQuery({
-    queryKey: ['/mock/order', pageNum, date, sortBy, reverse],
+    queryKey: ['/mock/order', pageNum, date, sortBy, reverse, search, status],
     queryFn: () =>
-      getOrderData(pageNum - 1, date, sortBy, reverse, search).then(
+      getOrderData(pageNum - 1, date, sortBy, reverse, search, status).then(
         (res) => res.data,
       ),
     refetchInterval: 5000,

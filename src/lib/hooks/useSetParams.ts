@@ -8,6 +8,7 @@ const useSetParams = () => {
   const currentSortBy = searchParams.get('sortBy') || 'id';
   const currentReverse = searchParams.get('reverse') === 'true' ? true : false;
   const currentSearch = searchParams.get('search') || '';
+  const currentStatus = searchParams.get('status') || '';
 
   const onSetParams = ({
     pageValue,
@@ -15,11 +16,14 @@ const useSetParams = () => {
     sortValue,
     reverseValue,
     searchValue,
+    statusValue,
     event,
   }: IOnSetParams) => {
     if (pageValue !== undefined) searchParams.set('page', String(pageValue));
     if (dateValue !== undefined) searchParams.set('date', String(dateValue));
     if (sortValue !== undefined) searchParams.set('sortBy', String(sortValue));
+    if (statusValue !== undefined)
+      searchParams.set('status', String(statusValue));
     if (searchValue !== undefined)
       searchParams.set('search', String(searchValue));
     if (reverseValue !== undefined)
@@ -40,6 +44,7 @@ const useSetParams = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
     onSetParams,
     resetParams,
   };

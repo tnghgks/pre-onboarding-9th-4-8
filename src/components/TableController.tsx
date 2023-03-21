@@ -1,9 +1,10 @@
 import { Button, ButtonGroup, FormControl, Input } from '@chakra-ui/react';
 import useSetParams from '@/lib/hooks/useSetParams';
 import { TODAY } from '@/constants/config';
+import Filter from './OrderFilter';
 
 const TableController = () => {
-  const { onSetParams, resetParams } = useSetParams();
+  const { onSetParams } = useSetParams();
 
   const onSearch = (e: React.FormEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -29,9 +30,7 @@ const TableController = () => {
         >
           오늘의 주문보기
         </Button>
-        <Button colorScheme="blue" size="sm" onClick={resetParams}>
-          필터 삭제
-        </Button>
+        <Filter />
       </ButtonGroup>
       <FormControl
         display="flex"
@@ -41,6 +40,7 @@ const TableController = () => {
         alignItems="center"
         as="form"
         onSubmit={onSearch}
+        overflow="hidden"
       >
         <Input name="search" type="text" w="auto" placeholder="주문자 검색" />
         <Button type="submit">검색</Button>

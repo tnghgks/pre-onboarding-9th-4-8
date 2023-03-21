@@ -31,6 +31,7 @@ const OrderTableArea = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
     onSetParams,
   } = useSetParams();
   const { data } = useGetOrderData(
@@ -39,6 +40,7 @@ const OrderTableArea = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
   );
 
   const onClickSortBtn = (e: React.MouseEvent) => {

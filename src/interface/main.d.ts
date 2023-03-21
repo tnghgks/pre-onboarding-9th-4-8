@@ -20,6 +20,7 @@ export interface IOnSetParams {
   sortValue?: string;
   searchValue?: string;
   reverseValue?: boolean;
+  statusValue?: string;
   event?: React.ChangeEvent<HTMLInputElement>;
 }
 

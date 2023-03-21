@@ -13,7 +13,6 @@ import { CheckIcon, CloseIcon, WarningIcon } from '@chakra-ui/icons';
 import { IoIosPeople } from 'react-icons/io';
 import { TfiMoney } from 'react-icons/tfi';
 import { formatNumToDollar } from '@/lib/utils/formattingHelper';
-import { IOrderItem } from '@/interface/main';
 import useGetOrderData from '@/lib/hooks/useGetOrderData';
 import useSetParams from '@/lib/hooks/useSetParams';
 
@@ -24,6 +23,7 @@ const StatsArea = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
   } = useSetParams();
   const { data } = useGetOrderData(
     currentPage,
@@ -31,6 +31,7 @@ const StatsArea = () => {
     currentSortBy,
     currentReverse,
     currentSearch,
+    currentStatus,
   );
 
   const stats = [

@@ -15,14 +15,22 @@ export const orderListHandlers = [
     const reverse =
       req.url.searchParams.get('reverse') === 'true' ? true : false;
     const search = req.url.searchParams.get('search');
+    const status = req.url.searchParams.get('status');
+    console.log(status);
 
     const dataOfSelectedDate: IOrderItem[] = date
       ? mockData.filter((item) => item.transaction_time.split(' ')[0] === date)
       : mockData;
 
-    const searchedData = search
-      ? searchToCustomer(dataOfSelectedDate, search)
+    const filteredData: IOrderItem[] = status
+      ? status === 'complete'
+        ? dataOfSelectedDate.filter((item) => item.status)
+        : dataOfSelectedDate.filter((item) => !item.status)
       : dataOfSelectedDate;
+    console.log(filteredData);
+    const searchedData = search
+      ? searchToCustomer(filteredData, search)
+      : filteredData;
 
     const { startDate, endDate } = generateStartAndEndDate(searchedData);
 

@@ -7,6 +7,7 @@ export const getOrderData = async (
   sortBy?: string,
   reverse?: boolean,
   search?: string,
+  status?: string,
 ) => {
   return await apiClient({
     method: 'get',
@@ -18,6 +19,7 @@ export const getOrderData = async (
       sortBy,
       reverse,
       search,
+      status,
     },
   });
 };
