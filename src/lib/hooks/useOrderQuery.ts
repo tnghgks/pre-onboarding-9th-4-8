@@ -16,6 +16,7 @@ const useOrderQuery = (
           getOrderData(Number(page) - 1, date, customer, filter, sort).then(
             (res) => res.data,
           ),
+        retry: 3,
         refetchInterval: 5000,
       },
       {
