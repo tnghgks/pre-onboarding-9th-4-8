@@ -17,9 +17,16 @@ export interface IOrderInfo {
 export interface IOnSetParams {
   pageValue?: number;
   dateValue?: string;
+  sortValue?: string;
+  reverseValue?: boolean;
   event?: React.ChangeEvent<HTMLInputElement>;
 }
 
 export interface IErrorFallbackProps {
   resetErrorBoundary: (...args: unknown[]) => void;
+}
+export interface ISort<T> {
+  array: T[];
+  sortBy: keyof T | string;
+  reverse: boolean;
 }

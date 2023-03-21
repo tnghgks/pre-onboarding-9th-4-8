@@ -1,7 +1,12 @@
 import { ITEMS_PER_PAGE } from '@/constants/units';
 import apiClient from './apiClient';
 
-export const getOrderData = async (offset: number, date: string | null) => {
+export const getOrderData = async (
+  offset: number,
+  date: string | null,
+  sortBy?: string,
+  reverse?: boolean,
+) => {
   return await apiClient({
     method: 'get',
     url: '/mock/order',
@@ -9,6 +14,8 @@ export const getOrderData = async (offset: number, date: string | null) => {
       offset,
       date,
       limit: ITEMS_PER_PAGE,
+      sortBy,
+      reverse,
     },
   });
 };

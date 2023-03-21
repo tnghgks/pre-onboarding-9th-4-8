@@ -18,8 +18,14 @@ import useGetOrderData from '@/lib/hooks/useGetOrderData';
 import useSetParams from '@/lib/hooks/useSetParams';
 
 const StatsArea = () => {
-  const { currentPage, currentDate } = useSetParams();
-  const { data } = useGetOrderData(currentPage, currentDate);
+  const { currentPage, currentDate, currentSortBy, currentReverse } =
+    useSetParams();
+  const { data } = useGetOrderData(
+    currentPage,
+    currentDate,
+    currentSortBy,
+    currentReverse,
+  );
 
   const stats = [
     {
@@ -55,7 +61,7 @@ const StatsArea = () => {
     <StatGroup>
       {stats.map((stat) => (
         <Box bg="white" borderRadius="2xl" p="1em 1.5em" key={stat.label}>
-          <Flex alignItems="ceter" justifyContent="center" gap={4}>
+          <Flex alignItems="center" justifyContent="center" gap={4}>
             <Center>
               <Icon
                 as={stat.icon}

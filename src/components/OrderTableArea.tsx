@@ -12,18 +12,44 @@ import {
   Spacer,
   Flex,
   Heading,
+  Button,
 } from '@chakra-ui/react';
 import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 import { IOrderItem } from '@/interface/main';
 import useSetParams from '@/lib/hooks/useSetParams';
 import { formatPageInfo } from '@/lib/utils/formattingHelper';
+import { orderHeader } from '@/constants/orderTable';
 import useGetOrderData from '@/lib/hooks/useGetOrderData';
 import TablePagination from './TablePagination';
 import TableController from './TableController';
 
 const OrderTableArea = () => {
-  const { currentPage, currentDate } = useSetParams();
-  const { data } = useGetOrderData(currentPage, currentDate);
+  const {
+    currentPage,
+    currentDate,
+    currentSortBy,
+    currentReverse,
+    onSetParams,
+  } = useSetParams();
+  const { data } = useGetOrderData(
+    currentPage,
+    currentDate,
+    currentSortBy,
+    currentReverse,
+  );
+
+  const onClickSortBtn = (e: React.MouseEvent) => {
+    const { textContent } = e.target as HTMLButtonElement;
+
+    orderHeader.forEach((header) => {
+      if (header.title !== textContent) return;
+      if (currentSortBy === header.key) {
+        onSetParams({ sortValue: header.key, reverseValue: !currentReverse });
+      } else {
+        onSetParams({ sortValue: header.key, reverseValue: false });
+      }
+    });
+  };
 
   return (
     <Box bg="white" w="100%" borderRadius="2xl" p="1em 2em">
@@ -45,11 +71,11 @@ const OrderTableArea = () => {
           </TableCaption>
           <Thead>
             <Tr>
-              <Th>Order ID</Th>
-              <Th>Status</Th>
-              <Th>Customer Name / ID</Th>
-              <Th>Time</Th>
-              <Th>Currency</Th>
+              {orderHeader.map((header, index) => (
+                <Th key={index}>
+                  <Button onClick={onClickSortBtn}>{header.title}</Button>
+                </Th>
+              ))}
             </Tr>
           </Thead>
           <Tbody>
