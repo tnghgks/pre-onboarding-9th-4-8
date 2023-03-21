@@ -3,6 +3,7 @@ import { formatDollarToNumber } from '@/lib/utils/formattingHelper';
 import { generateStartAndEndDate } from '@/lib/utils/generator';
 import { sort } from '@/lib/utils/sortHelper';
 import { IOrderItem } from '@/interface/main';
+import { searchToCustomer } from '@/lib/utils/searchHelper';
 import mockData from '../storage/mock_data.json';
 
 export const orderListHandlers = [
@@ -13,14 +14,19 @@ export const orderListHandlers = [
     const sortBy = req.url.searchParams.get('sortBy') || 'id';
     const reverse =
       req.url.searchParams.get('reverse') === 'true' ? true : false;
+    const search = req.url.searchParams.get('search');
 
     const dataOfSelectedDate: IOrderItem[] = date
       ? mockData.filter((item) => item.transaction_time.split(' ')[0] === date)
       : mockData;
 
-    const { startDate, endDate } = generateStartAndEndDate(dataOfSelectedDate);
+    const searchedData = search
+      ? searchToCustomer(dataOfSelectedDate, search)
+      : dataOfSelectedDate;
 
-    const sortedData = sort({ array: dataOfSelectedDate, sortBy, reverse });
+    const { startDate, endDate } = generateStartAndEndDate(searchedData);
+
+    const sortedData = sort({ array: searchedData, sortBy, reverse });
 
     return res(
       ctx.json({

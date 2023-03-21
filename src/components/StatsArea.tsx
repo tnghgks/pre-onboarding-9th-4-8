@@ -9,7 +9,7 @@ import {
   Icon,
   Box,
 } from '@chakra-ui/react';
-import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
+import { CheckIcon, CloseIcon, WarningIcon } from '@chakra-ui/icons';
 import { IoIosPeople } from 'react-icons/io';
 import { TfiMoney } from 'react-icons/tfi';
 import { formatNumToDollar } from '@/lib/utils/formattingHelper';
@@ -18,13 +18,19 @@ import useGetOrderData from '@/lib/hooks/useGetOrderData';
 import useSetParams from '@/lib/hooks/useSetParams';
 
 const StatsArea = () => {
-  const { currentPage, currentDate, currentSortBy, currentReverse } =
-    useSetParams();
+  const {
+    currentPage,
+    currentDate,
+    currentSortBy,
+    currentReverse,
+    currentSearch,
+  } = useSetParams();
   const { data } = useGetOrderData(
     currentPage,
     currentDate,
     currentSortBy,
     currentReverse,
+    currentSearch,
   );
 
   const stats = [
@@ -59,26 +65,45 @@ const StatsArea = () => {
   ];
   return (
     <StatGroup>
-      {stats.map((stat) => (
-        <Box bg="white" borderRadius="2xl" p="1em 1.5em" key={stat.label}>
+      {data.order.length !== 0 ? (
+        stats.map((stat) => (
+          <Box bg="white" borderRadius="2xl" p="1em 1.5em" key={stat.label}>
+            <Flex alignItems="center" justifyContent="center" gap={4}>
+              <Center>
+                <Icon
+                  as={stat.icon}
+                  w={8}
+                  h={8}
+                  color={stat.iconColor}
+                  alignContent="center"
+                />
+              </Center>
+              <Stat>
+                <StatLabel>{stat.label}</StatLabel>
+                <StatNumber>{stat.stat}</StatNumber>
+                <StatHelpText>{stat.helpText}</StatHelpText>
+              </Stat>
+            </Flex>
+          </Box>
+        ))
+      ) : (
+        <Box bg="white" borderRadius="2xl" p="1em 1.5em">
           <Flex alignItems="center" justifyContent="center" gap={4}>
             <Center>
               <Icon
-                as={stat.icon}
+                as={CloseIcon}
                 w={8}
                 h={8}
-                color={stat.iconColor}
+                color={'red.500'}
                 alignContent="center"
               />
             </Center>
             <Stat>
-              <StatLabel>{stat.label}</StatLabel>
-              <StatNumber>{stat.stat}</StatNumber>
-              <StatHelpText>{stat.helpText}</StatHelpText>
+              <StatLabel>검색결과가 없습니다.</StatLabel>
             </Stat>
           </Flex>
         </Box>
-      ))}
+      )}
     </StatGroup>
   );
 };
