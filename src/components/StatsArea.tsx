@@ -9,7 +9,6 @@ import {
   Icon,
   Box,
   Heading,
-  Divider,
 } from '@chakra-ui/react';
 import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 import { IoIosPeople } from 'react-icons/io';
@@ -25,6 +24,8 @@ const StatsArea = () => {
     getParams('page'),
     getParams('date'),
     getParams('customer'),
+    getParams('filter'),
+    getParams('sort'),
   );
 
   const stats = [

@@ -9,6 +9,9 @@ export const orderListHandlers = [
     const limit = Number(req.url.searchParams.get('limit'));
     const date = req.url.searchParams.get('date');
     const customer = req.url.searchParams.get('customer');
+    const filter = req.url.searchParams.get('filter');
+    const sort = req.url.searchParams.get('sort');
+
     let copiedMockData = [...mockData];
 
     if (date) {
@@ -21,6 +24,26 @@ export const orderListHandlers = [
       copiedMockData = copiedMockData.filter(
         (item) => item.customer_name === customer,
       );
+    }
+
+    if (!sort) copiedMockData = copiedMockData.sort((a, b) => a.id - b.id);
+
+    if (sort === 'id-descending')
+      copiedMockData = copiedMockData.sort((a, b) => b.id - a.id);
+
+    if (sort === 'time-descending')
+      copiedMockData = copiedMockData.sort(
+        (a, b) =>
+          new Date(b.transaction_time).getTime() -
+          new Date(a.transaction_time).getTime(),
+      );
+
+    if (filter === 'complete') {
+      copiedMockData = copiedMockData.filter((item) => item.status === true);
+    }
+
+    if (filter === 'incomplete') {
+      copiedMockData = copiedMockData.filter((item) => item.status === false);
     }
 
     const [startDate, endDate] =

@@ -27,14 +27,15 @@ const SearchSideDrawer = ({
   onClose,
   btnRef,
 }: ISearchSideDrawerProps) => {
+  const [searchName, onChangeSearchName, setSearchName] = useInput('');
   const { getParams, setParams, deleteAllParams } = useQueryString();
   const [_, customersResult] = useOrderQuery(
     getParams('page'),
     getParams('date'),
     getParams('customer'),
+    getParams('filter'),
+    getParams('sort'),
   );
-
-  const [searchName, onChangeSearchName, setSearchName] = useInput('');
 
   const filterdCustomers = customersResult.data.filter((customer: string) =>
     customer

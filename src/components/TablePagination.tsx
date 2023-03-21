@@ -10,6 +10,8 @@ const TablePagination = () => {
     getParams('page'),
     getParams('date'),
     getParams('customer'),
+    getParams('filter'),
+    getParams('sort'),
   );
 
   return (

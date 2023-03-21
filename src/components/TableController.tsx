@@ -10,23 +10,23 @@ import {
   Spacer,
   IconButton,
   ButtonGroup,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from '@chakra-ui/react';
 import { Search2Icon, RepeatIcon } from '@chakra-ui/icons';
+import { FiFilter } from 'react-icons/fi';
 import { useRef } from 'react';
 import useQueryString from '@/lib/hooks/useQueryString';
 import { TODAY } from '@/constants/config';
 import SearchSideDrawer from './SearchSideDrawer';
 
 const TableController = () => {
+  const { getParams, setParams, deleteAllParams, deleteParams } =
+    useQueryString();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
-
-  const { getParams, setParams, deleteAllParams } = useQueryString();
-
-  const onToggleDate = (event: React.ChangeEvent<HTMLInputElement>) => {
-    deleteAllParams();
-    if (event.target.checked) setParams('date', TODAY);
-  };
 
   return (
     <>
@@ -35,44 +35,7 @@ const TableController = () => {
         alignItems="flex-start"
         justifyContent="flex-start"
       >
-        <ButtonGroup>
-          <IconButton
-            ref={btnRef}
-            onClick={onOpen}
-            size="lg"
-            aria-label="Search customer-name"
-            icon={<Search2Icon />}
-          />
-          <IconButton
-            onClick={deleteAllParams}
-            size="lg"
-            aria-label="Initialize params"
-            icon={<RepeatIcon />}
-          />
-        </ButtonGroup>
-
-        <Spacer />
         <Stack gap={1}>
-          <FormControl
-            display="flex"
-            alignItems="flex-end"
-            justifyContent="flex-end"
-          >
-            <FormLabel htmlFor="completed-order" mb="0">
-              <Highlight
-                query="completed"
-                styles={{
-                  px: '2',
-                  py: '0.5',
-                  rounded: 'full',
-                  bg: 'green.100',
-                }}
-              >
-                Do you want to see Completed order?
-              </Highlight>
-            </FormLabel>
-            <Switch id="completed-order" />
-          </FormControl>
           <FormControl
             display="flex"
             alignItems="center"
@@ -88,7 +51,11 @@ const TableController = () => {
             </FormLabel>
             <Switch
               id="today-order"
-              onChange={onToggleDate}
+              onChange={(e) =>
+                e.target.checked
+                  ? setParams('date', TODAY)
+                  : deleteParams('date')
+              }
               isChecked={!!getParams('date')}
             />
           </FormControl>
@@ -106,6 +73,39 @@ const TableController = () => {
             )}
           </Flex>
         </Stack>
+        <Spacer />
+
+        <ButtonGroup>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              size="lg"
+              aria-label="Options"
+              icon={<FiFilter />}
+            />
+            <MenuList>
+              <MenuItem onClick={() => setParams('filter', 'complete')}>
+                Only Complete
+              </MenuItem>
+              <MenuItem onClick={() => setParams('filter', 'incomplete')}>
+                Only Incomplete
+              </MenuItem>
+            </MenuList>
+          </Menu>
+          <IconButton
+            ref={btnRef}
+            onClick={onOpen}
+            size="lg"
+            aria-label="Search customer-name"
+            icon={<Search2Icon />}
+          />
+          <IconButton
+            onClick={deleteAllParams}
+            size="lg"
+            aria-label="Initialize params"
+            icon={<RepeatIcon />}
+          />
+        </ButtonGroup>
       </Flex>
 
       <SearchSideDrawer isOpen={isOpen} onClose={onClose} btnRef={btnRef} />
