@@ -11,18 +11,18 @@ import {
   Box,
   Heading,
   Center,
-  IconButton,
 } from '@chakra-ui/react';
-import { CheckIcon, WarningIcon, ArrowUpDownIcon } from '@chakra-ui/icons';
+import { CheckIcon, WarningIcon } from '@chakra-ui/icons';
 import { IOrderItem } from '@/interface/main';
 import useQueryString from '@/lib/hooks/useQueryString';
 import { formatPageInfo } from '@/lib/utils/formatter';
 import useOrderQuery from '@/lib/hooks/useOrderQuery';
 import TablePagination from './TablePagination';
 import TableController from './TableController';
+import SortButton from './SortButton';
 
 const OrderTableArea = () => {
-  const { getParams, setParams, deleteParams } = useQueryString();
+  const { getParams } = useQueryString();
   const [orderResult] = useOrderQuery(
     getParams('page'),
     getParams('date'),
@@ -53,28 +53,12 @@ const OrderTableArea = () => {
               <Th>Status</Th>
               <Th>
                 Order ID&nbsp;&nbsp;
-                <IconButton
-                  size="xs"
-                  aria-label="Search database"
-                  icon={<ArrowUpDownIcon />}
-                  onClick={() => {
-                    setParams('sort', 'id-descending');
-                    deleteParams('page');
-                  }}
-                />
+                <SortButton sortTarget="id" />
               </Th>
               <Th>Customer Name / ID</Th>
               <Th>
                 Time&nbsp;&nbsp;
-                <IconButton
-                  size="xs"
-                  aria-label="Search database"
-                  icon={<ArrowUpDownIcon />}
-                  onClick={() => {
-                    setParams('sort', 'time-descending');
-                    deleteParams('page');
-                  }}
-                />
+                <SortButton sortTarget="time" />
               </Th>
               <Th>Currency</Th>
             </Tr>

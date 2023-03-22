@@ -26,10 +26,18 @@ export const orderListHandlers = [
       );
     }
 
-    if (!sort) copiedMockData = copiedMockData.sort((a, b) => a.id - b.id);
+    if (sort === 'id-ascending')
+      copiedMockData = copiedMockData.sort((a, b) => a.id - b.id);
 
     if (sort === 'id-descending')
       copiedMockData = copiedMockData.sort((a, b) => b.id - a.id);
+
+    if (sort === 'time-ascending')
+      copiedMockData = copiedMockData.sort(
+        (a, b) =>
+          new Date(a.transaction_time).getTime() -
+          new Date(b.transaction_time).getTime(),
+      );
 
     if (sort === 'time-descending')
       copiedMockData = copiedMockData.sort(

@@ -27,3 +27,9 @@ export interface IErrorFallbackProps {
 }
 
 export type paramsKeyType = 'date' | 'page' | 'customer' | 'sort' | 'filter';
+
+export type sortTargetType = 'time' | 'id';
+
+export interface ISortButtonProps {
+  sortTarget: sortTargetType;
+}
