@@ -18,10 +18,12 @@ const useOrderQuery = (
           ),
         retry: 3,
         refetchInterval: 5000,
+        staleTime: 5000,
       },
       {
         queryKey: ['/mock/customers'],
         queryFn: () => getCustomers().then((res) => res.data.customers),
+        staleTime: Infinity,
       },
     ],
   });

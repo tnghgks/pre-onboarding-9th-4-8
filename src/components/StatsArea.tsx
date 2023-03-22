@@ -49,7 +49,7 @@ const StatsArea = () => {
         .length,
       icon: CheckIcon,
       iconColor: 'green.500',
-      helpText: 'per Page',
+      helpText: `of ${orderResult.data.order.length}`,
     },
     {
       label: 'Incomplete',
@@ -57,7 +57,7 @@ const StatsArea = () => {
         .length,
       icon: WarningIcon,
       iconColor: 'orange.500',
-      helpText: 'per Page',
+      helpText: `of ${orderResult.data.order.length}`,
     },
   ];
   return (
