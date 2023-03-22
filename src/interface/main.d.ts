@@ -17,9 +17,19 @@ export interface IOrderInfo {
 export interface IOnSetParams {
   pageValue?: number;
   dateValue?: string;
+  customerValue?: string;
   event?: React.ChangeEvent<HTMLInputElement>;
 }
 
 export interface IErrorFallbackProps {
   resetErrorBoundary: (...args: unknown[]) => void;
+  error: Error;
+}
+
+export type paramsKeyType = 'date' | 'page' | 'customer' | 'sort' | 'filter';
+
+export type sortTargetType = 'time' | 'id';
+
+export interface ISortButtonProps {
+  sortTarget: sortTargetType;
 }

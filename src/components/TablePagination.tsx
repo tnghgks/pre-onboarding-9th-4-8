@@ -1,27 +1,33 @@
 import { Button, Stack } from '@chakra-ui/react';
-import useSetParams from '@/lib/hooks/useSetParams';
+import useQueryString from '@/lib/hooks/useQueryString';
 import { ITEMS_PER_PAGE } from '@/constants/units';
-import { generateZeroToNArr } from '@/lib/utils/generator';
-import useGetOrderData from '@/lib/hooks/useGetOrderData';
+import { generateOneToNArr } from '@/lib/utils/generator';
+import useOrderQuery from '@/lib/hooks/useOrderQuery';
 
 const TablePagination = () => {
-  const { currentPage, currentDate, onSetParams } = useSetParams();
-  const { data } = useGetOrderData(currentPage, currentDate);
+  const { getParams, setParams } = useQueryString();
+  const [orderResult] = useOrderQuery(
+    getParams('page'),
+    getParams('date'),
+    getParams('customer'),
+    getParams('filter'),
+    getParams('sort'),
+  );
 
   return (
     <Stack spacing={2} direction="row" align="center">
-      {generateZeroToNArr(
-        Math.ceil(data.orderInfo.totalCount / ITEMS_PER_PAGE),
+      {generateOneToNArr(
+        Math.ceil(orderResult.data.orderInfo.totalCount / ITEMS_PER_PAGE),
       ).map((num) => (
         <Button
           type="button"
-          colorScheme="blue"
+          colorScheme="gray"
           size="sm"
           key={num}
-          onClick={() => onSetParams({ pageValue: num + 1 })}
-          variant={currentPage === num + 1 ? 'solid' : 'outline'}
+          onClick={() => setParams('page', String(num))}
+          variant={Number(getParams('page')) === num ? 'solid' : 'outline'}
         >
-          {num + 1}
+          {num}
         </Button>
       ))}
     </Stack>

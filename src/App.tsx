@@ -14,11 +14,11 @@ if (IS_MOCK) {
 const App = () => {
   return (
     <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <ChakraProvider theme={theme}>
+      <ChakraProvider theme={theme}>
+        <QueryClientProvider client={queryClient}>
           <Router />
-        </ChakraProvider>
-      </QueryClientProvider>
+        </QueryClientProvider>
+      </ChakraProvider>
     </BrowserRouter>
   );
 };
