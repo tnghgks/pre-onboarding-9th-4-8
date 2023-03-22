@@ -71,24 +71,25 @@ const SearchSideDrawer = ({
           />
 
           <UnorderedList>
-            {filterdCustomers.map((customer: string) => (
-              <ListItem
-                key={customer}
-                aria-hidden={true}
-                cursor="pointer"
-                p="0.2em 0"
-                onClick={() => onSearch(customer)}
-              >
-                <Highlight
-                  query={searchName}
-                  styles={{
-                    bg: 'blue.50',
-                  }}
+            {searchName &&
+              filterdCustomers.map((customer: string) => (
+                <ListItem
+                  key={customer}
+                  aria-hidden={true}
+                  cursor="pointer"
+                  p="0.2em 0"
+                  onClick={() => onSearch(customer)}
                 >
-                  {customer}
-                </Highlight>
-              </ListItem>
-            ))}
+                  <Highlight
+                    query={searchName}
+                    styles={{
+                      bg: 'blue.50',
+                    }}
+                  >
+                    {customer}
+                  </Highlight>
+                </ListItem>
+              ))}
           </UnorderedList>
         </DrawerBody>
 
