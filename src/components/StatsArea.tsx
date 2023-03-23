@@ -32,7 +32,7 @@ const StatsArea = () => {
     {
       label: 'Total Order',
       'data-testid': 'total-order',
-      stat: orderResult.data.orderInfo.totalCount,
+      stat: orderResult.data.orderInfo.totalCount || 0,
       icon: IoIosPeople,
       iconColor: 'blue.900',
       helpText: `${orderResult.data.orderInfo.startDate} - ${orderResult.data.orderInfo.endDate}`,
@@ -40,7 +40,7 @@ const StatsArea = () => {
     {
       label: 'Total Currency',
       'data-testid': 'total-currency',
-      stat: formatNumToDollar(orderResult.data.orderInfo.totalCurrency),
+      stat: formatNumToDollar(orderResult.data.orderInfo.totalCurrency || 0),
       icon: TfiMoney,
       iconColor: 'blue.900',
       helpText: `${orderResult.data.orderInfo.startDate} - ${orderResult.data.orderInfo.endDate}`,
@@ -48,20 +48,22 @@ const StatsArea = () => {
     {
       label: 'Complete',
       'data-testid': 'complete',
-      stat: orderResult.data.order.filter((item: IOrderItem) => item.status)
-        .length,
+      stat:
+        orderResult.data.order.filter((item: IOrderItem) => item.status)
+          .length || 0,
       icon: CheckIcon,
       iconColor: 'green.500',
-      helpText: `of ${orderResult.data.order.length}`,
+      helpText: `of ${orderResult.data.order.length || 0}`,
     },
     {
       label: 'Incomplete',
       'data-testid': 'incomplete',
-      stat: orderResult.data.order.filter((item: IOrderItem) => !item.status)
-        .length,
+      stat:
+        orderResult.data.order.filter((item: IOrderItem) => !item.status)
+          .length || 0,
       icon: WarningIcon,
       iconColor: 'orange.500',
-      helpText: `of ${orderResult.data.order.length}`,
+      helpText: `of ${orderResult.data.order.length || 0}`,
     },
   ];
   return (

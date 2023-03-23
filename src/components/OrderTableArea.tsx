@@ -44,8 +44,8 @@ const OrderTableArea = () => {
           <TableCaption>
             {formatPageInfo(
               Number(getParams('page')),
-              orderResult.data.order.length,
-              orderResult.data.orderInfo.totalCount,
+              orderResult.data.order.length || 0,
+              orderResult.data.orderInfo.totalCount || 0,
             )}
           </TableCaption>
           <Thead>
