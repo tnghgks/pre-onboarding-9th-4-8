@@ -78,6 +78,7 @@ const TableController = () => {
           <Menu>
             <Tooltip label="Filter by status">
               <MenuButton
+                data-testid="filterBtn"
                 as={IconButton}
                 size="lg"
                 aria-label="Options"
@@ -107,6 +108,7 @@ const TableController = () => {
           <Tooltip label="Search customer">
             <IconButton
               ref={btnRef}
+              data-testid="searchBtn"
               onClick={onOpen}
               size="lg"
               aria-label="Search customer-name"
