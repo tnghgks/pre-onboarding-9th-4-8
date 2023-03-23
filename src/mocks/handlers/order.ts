@@ -61,13 +61,14 @@ export const orderListHandlers = [
 
     return res(
       ctx.json({
-        order: [...copiedMockData].splice(offset * limit, limit),
+        order: [...copiedMockData].splice(offset * limit, limit) || [],
         orderInfo: {
-          totalCount: copiedMockData.length,
-          totalCurrency: copiedMockData.reduce(
-            (acc, cur) => acc + formatDollarToNumber(cur.currency),
-            0,
-          ),
+          totalCount: copiedMockData.length || 0,
+          totalCurrency:
+            copiedMockData.reduce(
+              (acc, cur) => acc + formatDollarToNumber(cur.currency),
+              0,
+            ) || 0,
           startDate,
           endDate,
         },
