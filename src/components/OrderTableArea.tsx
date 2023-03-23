@@ -63,23 +63,25 @@ const OrderTableArea = () => {
               <Th>Currency</Th>
             </Tr>
           </Thead>
-          <Tbody>
+          <Tbody data-testid="table-body">
             {orderResult.data.order.map((orderItem: IOrderItem) => {
               return (
-                <Tr key={orderItem.id}>
-                  <Td>
+                <Tr key={orderItem.id} data-testid="order-tr">
+                  <Td data-testid="status">
                     {orderItem.status ? (
                       <Icon as={CheckIcon} w={4} h={4} color="green.500" />
                     ) : (
                       <Icon as={WarningIcon} w={4} h={4} color="orange.500" />
                     )}
                   </Td>
-                  <Td>{orderItem.id}</Td>
-                  <Td>
+                  <Td data-testid="id">{orderItem.id}</Td>
+                  <Td data-testid="customer-name">
                     {orderItem.customer_name} / {orderItem.customer_id}
                   </Td>
-                  <Td>{orderItem.transaction_time}</Td>
-                  <Td>{orderItem.currency}</Td>
+                  <Td data-testid="transaction-time">
+                    {orderItem.transaction_time}
+                  </Td>
+                  <Td data-testid="currency">{orderItem.currency}</Td>
                 </Tr>
               );
             })}

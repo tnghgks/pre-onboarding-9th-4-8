@@ -31,6 +31,7 @@ const StatsArea = () => {
   const stats = [
     {
       label: 'Total Order',
+      'data-testid': 'total-order',
       stat: orderResult.data.orderInfo.totalCount,
       icon: IoIosPeople,
       iconColor: 'blue.900',
@@ -38,6 +39,7 @@ const StatsArea = () => {
     },
     {
       label: 'Total Currency',
+      'data-testid': 'total-currency',
       stat: formatNumToDollar(orderResult.data.orderInfo.totalCurrency),
       icon: TfiMoney,
       iconColor: 'blue.900',
@@ -45,6 +47,7 @@ const StatsArea = () => {
     },
     {
       label: 'Complete',
+      'data-testid': 'complete',
       stat: orderResult.data.order.filter((item: IOrderItem) => item.status)
         .length,
       icon: CheckIcon,
@@ -53,6 +56,7 @@ const StatsArea = () => {
     },
     {
       label: 'Incomplete',
+      'data-testid': 'incomplete',
       stat: orderResult.data.order.filter((item: IOrderItem) => !item.status)
         .length,
       icon: WarningIcon,
@@ -67,7 +71,7 @@ const StatsArea = () => {
       </Box>
       <StatGroup p="1.5em 1em">
         {stats.map((stat) => (
-          <Box key={stat.label}>
+          <Box key={stat.label} data-testid={stat['data-testid']}>
             <Flex alignItems="ceter" justifyContent="center" gap={4}>
               <Center>
                 <Icon

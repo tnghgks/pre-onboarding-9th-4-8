@@ -35,6 +35,7 @@ const TableController = () => {
         minWidth="max-content"
         alignItems="flex-start"
         justifyContent="flex-start"
+        data-testid="table-controller"
       >
         <Stack gap={1}>
           <FormControl
@@ -52,6 +53,7 @@ const TableController = () => {
             </FormLabel>
             <Switch
               id="today-order"
+              data-testid="today-order"
               onChange={(e) =>
                 e.target.checked
                   ? (setParams('date', TODAY), deleteParams('page'))
@@ -78,6 +80,7 @@ const TableController = () => {
           <Menu>
             <Tooltip label="Filter by status">
               <MenuButton
+                data-testid="filter-btn"
                 as={IconButton}
                 size="lg"
                 aria-label="Options"
@@ -107,6 +110,7 @@ const TableController = () => {
           <Tooltip label="Search customer">
             <IconButton
               ref={btnRef}
+              data-testid="search-btn"
               onClick={onOpen}
               size="lg"
               aria-label="Search customer-name"
@@ -115,6 +119,7 @@ const TableController = () => {
           </Tooltip>
           <Tooltip label="Initialize query">
             <IconButton
+              data-testid="reset-filter"
               onClick={deleteAllParams}
               size="lg"
               aria-label="Initialize params"
