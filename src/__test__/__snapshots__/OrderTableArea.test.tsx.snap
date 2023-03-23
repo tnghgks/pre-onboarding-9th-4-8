@@ -1,0 +1,2682 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<OrderTableArea /> <OrderTableArea /> 렌더링 테스트 1`] = `
+<div>
+  <div
+    class="css-zarnii"
+  >
+    <div
+      class="css-1v4p1ms"
+    >
+      <h2
+        class="chakra-heading css-18j379d"
+      >
+        Order Table
+      </h2>
+    </div>
+    <div
+      class="css-1v4p1ms"
+    >
+      <div
+        class="css-155vwge"
+      >
+        <div
+          class="chakra-stack css-1iep1mi"
+        >
+          <div
+            class="chakra-form-control css-qav60l"
+            role="group"
+          >
+            <label
+              class="chakra-form__label css-16xaqf9"
+              for="today-order"
+              id="field-:r1:-label"
+            >
+              Do you want to see 
+              <mark
+                class="css-5vo9pe"
+              >
+                Today\`s
+              </mark>
+               order?
+            </label>
+            <label
+              class="chakra-switch css-ghot30"
+            >
+              <input
+                aria-disabled="false"
+                aria-invalid="false"
+                class="chakra-switch__input"
+                id="today-order"
+                style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; width: 1px; margin: -1px; padding: 0px; overflow: hidden; white-space: nowrap; position: absolute;"
+                type="checkbox"
+                value=""
+              />
+              <span
+                aria-hidden="true"
+                class="chakra-switch__track css-p27qcy"
+              >
+                <span
+                  class="chakra-switch__thumb css-7roig"
+                />
+              </span>
+            </label>
+          </div>
+        </div>
+        <div
+          class="css-17xejub"
+        />
+        <div
+          class="chakra-button__group css-1ind3v2"
+          data-orientation="horizontal"
+          role="group"
+        >
+          <button
+            aria-controls="menu-list-:r3:"
+            aria-expanded="false"
+            aria-haspopup="menu"
+            aria-label="Options"
+            class="chakra-button chakra-menu__menu-button css-13d4gc3"
+            id="menu-button-:r3:"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              fill="none"
+              focusable="false"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polygon
+                points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
+              />
+            </svg>
+          </button>
+          <div
+            class="css-r6z5ec"
+            style="visibility: hidden; position: absolute; min-width: max-content; inset: 0 auto auto 0;"
+          >
+            <div
+              aria-orientation="vertical"
+              class="chakra-menu__menu-list css-1kfu8nn"
+              id="menu-list-:r3:"
+              role="menu"
+              style="transform-origin: var(--popper-transform-origin); opacity: 0; visibility: hidden; transform: scale(0.8) translateZ(0);"
+              tabindex="-1"
+            >
+              <button
+                class="chakra-menu__menuitem css-18esm8n"
+                data-index="0"
+                id="menu-list-:r3:-menuitem-:r6:"
+                role="menuitem"
+                tabindex="-1"
+                type="button"
+              >
+                Only Complete
+              </button>
+              <button
+                class="chakra-menu__menuitem css-18esm8n"
+                data-index="1"
+                id="menu-list-:r3:-menuitem-:r7:"
+                role="menuitem"
+                tabindex="-1"
+                type="button"
+              >
+                Only Incomplete
+              </button>
+            </div>
+          </div>
+          <button
+            aria-label="Search customer-name"
+            class="chakra-button css-13d4gc3"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23.414,20.591l-4.645-4.645a10.256,10.256,0,1,0-2.828,2.829l4.645,4.644a2.025,2.025,0,0,0,2.828,0A2,2,0,0,0,23.414,20.591ZM10.25,3.005A7.25,7.25,0,1,1,3,10.255,7.258,7.258,0,0,1,10.25,3.005Z"
+                fill="currentColor"
+              />
+            </svg>
+          </button>
+          <button
+            aria-label="Initialize params"
+            class="chakra-button css-13d4gc3"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              class="chakra-icon css-onkibi"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <g
+                fill="currentColor"
+              >
+                <path
+                  d="M10.319,4.936a7.239,7.239,0,0,1,7.1,2.252,1.25,1.25,0,1,0,1.872-1.657A9.737,9.737,0,0,0,9.743,2.5,10.269,10.269,0,0,0,2.378,9.61a.249.249,0,0,1-.271.178l-1.033-.13A.491.491,0,0,0,.6,9.877a.5.5,0,0,0-.019.526l2.476,4.342a.5.5,0,0,0,.373.248.43.43,0,0,0,.062,0,.5.5,0,0,0,.359-.152l3.477-3.593a.5.5,0,0,0-.3-.844L5.15,10.172a.25.25,0,0,1-.2-.333A7.7,7.7,0,0,1,10.319,4.936Z"
+                />
+                <path
+                  d="M23.406,14.1a.5.5,0,0,0,.015-.526l-2.5-4.329A.5.5,0,0,0,20.546,9a.489.489,0,0,0-.421.151l-3.456,3.614a.5.5,0,0,0,.3.842l1.848.221a.249.249,0,0,1,.183.117.253.253,0,0,1,.023.216,7.688,7.688,0,0,1-5.369,4.9,7.243,7.243,0,0,1-7.1-2.253,1.25,1.25,0,1,0-1.872,1.656,9.74,9.74,0,0,0,9.549,3.03,10.261,10.261,0,0,0,7.369-7.12.251.251,0,0,1,.27-.179l1.058.127a.422.422,0,0,0,.06,0A.5.5,0,0,0,23.406,14.1Z"
+                />
+              </g>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="chakra-table__container css-1os9jo1"
+    >
+      <table
+        class="chakra-table css-5605sr"
+      >
+        <caption
+          class="css-7478fk"
+        >
+          Showing 1 - 50 out of 500
+        </caption>
+        <thead
+          class="css-0"
+        >
+          <tr
+            class="css-0"
+          >
+            <th
+              class="css-1zts0j"
+            >
+              Status
+            </th>
+            <th
+              class="css-1zts0j"
+            >
+              Order ID  
+              <button
+                class="chakra-button css-1qnpchy"
+                data-testid="sort_by_id"
+                type="button"
+              >
+                <svg
+                  class="chakra-icon css-177yplm"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="chakra-icon css-177yplm"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </th>
+            <th
+              class="css-1zts0j"
+            >
+              Customer Name / ID
+            </th>
+            <th
+              class="css-1zts0j"
+            >
+              Time  
+              <button
+                class="chakra-button css-1qnpchy"
+                data-testid="sort_by_time"
+                type="button"
+              >
+                <svg
+                  class="chakra-icon css-177yplm"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <svg
+                  class="chakra-icon css-177yplm"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </th>
+            <th
+              class="css-1zts0j"
+            >
+              Currency
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          class="css-0"
+        >
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              1
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Holmes Howard
+               / 
+              15
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 17:39:50
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $5.61
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              2
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Cynthia Terrell
+               / 
+              16
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 06:59:37
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $10.99
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              3
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Ann Barron
+               / 
+              17
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 00:41:58
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $37.87
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              4
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Wade Powell
+               / 
+              18
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 12:00:18
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $30.96
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              5
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Michelle Abbott
+               / 
+              19
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 15:30:37
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $69.49
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              6
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Libby Wilcox
+               / 
+              20
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 10:20:21
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $26.08
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              7
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Barry Rosales
+               / 
+              21
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 07:47:08
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $76.14
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              8
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Patience Hartman
+               / 
+              22
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 09:08:41
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $24.14
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              9
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Kane Hines
+               / 
+              23
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 01:02:25
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $47.84
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              10
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Penelope Cannon
+               / 
+              24
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 21:55:49
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $82.48
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              11
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Chancellor Savage
+               / 
+              25
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 22:24:40
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $2.99
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              12
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Stacy Wilkins
+               / 
+              26
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 18:43:56
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $66.53
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              13
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Cheyenne Hines
+               / 
+              27
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 16:26:42
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $52.64
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              14
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Lee Patton
+               / 
+              28
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 06:20:35
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $50.75
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              15
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Daryl Chaney
+               / 
+              29
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 01:40:14
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $89.41
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              16
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Kareem Rios
+               / 
+              30
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 22:48:21
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $75.20
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              17
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Jenna Saunders
+               / 
+              31
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 17:57:47
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $78.52
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              18
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Benedict Jefferson
+               / 
+              32
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 23:03:10
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $81.86
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              19
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Brendan Gray
+               / 
+              33
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 18:18:25
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $51.46
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              20
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Sebastian Delacruz
+               / 
+              34
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 18:12:44
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $1.35
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              21
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Devin Talley
+               / 
+              35
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 03:31:17
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $96.84
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              22
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Silas Logan
+               / 
+              36
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 22:05:52
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $28.40
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              23
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Kennedy Romero
+               / 
+              37
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 20:39:24
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $73.84
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              24
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Aaron Lucas
+               / 
+              38
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 01:01:04
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $45.17
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              25
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Amal Nash
+               / 
+              39
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 01:47:40
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $94.43
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              26
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Hedy Koch
+               / 
+              40
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 16:25:13
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $21.85
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              27
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Gretchen Bright
+               / 
+              41
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 02:15:11
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $48.69
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              28
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Amela Soto
+               / 
+              42
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 01:07:25
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $11.52
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              29
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Kadeem Terry
+               / 
+              43
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 14:11:27
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $63.16
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              30
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Burke Gallagher
+               / 
+              44
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 22:24:13
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $22.09
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              31
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Jordan Sheppard
+               / 
+              45
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 05:34:51
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $81.14
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              32
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Griffith Nixon
+               / 
+              46
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 01:34:08
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $31.61
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              33
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Iliana Berg
+               / 
+              47
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 14:42:42
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $27.57
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              34
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Jaime Kirkland
+               / 
+              48
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 02:28:01
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $40.69
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              35
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Lane Clements
+               / 
+              49
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 14:29:19
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $69.89
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              36
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Kibo Witt
+               / 
+              50
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 14:25:22
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $99.74
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              37
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Murphy Marquez
+               / 
+              51
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 06:55:57
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $44.84
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              38
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Aileen Hodge
+               / 
+              52
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 02:24:55
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $71.32
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              39
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Quin Nguyen
+               / 
+              53
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 12:17:45
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $68.14
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              40
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Zephania Crane
+               / 
+              54
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 21:38:54
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $44.55
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              41
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Cherokee Clements
+               / 
+              55
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 21:21:06
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $90.49
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              42
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Pearl Bean
+               / 
+              56
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 05:05:21
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $0.98
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              43
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Garrett Cochran
+               / 
+              57
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 02:40:32
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $53.37
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              44
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Timon Coffey
+               / 
+              58
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 22:08:24
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $94.96
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              45
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Lillith Michael
+               / 
+              59
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 04:18:49
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $23.31
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              46
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Brian Cohen
+               / 
+              60
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 02:11:00
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $50.16
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-b8hrmh"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.983,0a12.206,12.206,0,0,0-8.51,3.653A11.8,11.8,0,0,0,0,12.207,11.779,11.779,0,0,0,11.8,24h.214A12.111,12.111,0,0,0,24,11.791h0A11.766,11.766,0,0,0,11.983,0ZM10.5,16.542a1.476,1.476,0,0,1,1.449-1.53h.027a1.527,1.527,0,0,1,1.523,1.47,1.475,1.475,0,0,1-1.449,1.53h-.027A1.529,1.529,0,0,1,10.5,16.542ZM11,12.5v-6a1,1,0,0,1,2,0v6a1,1,0,1,1-2,0Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              47
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Pamela Casey
+               / 
+              61
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-09 02:07:53
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $45.14
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              48
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Aladdin Shepherd
+               / 
+              62
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 19:33:22
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $5.61
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              49
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Jolene Tran
+               / 
+              63
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-07 23:36:00
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $81.52
+            </td>
+          </tr>
+          <tr
+            class="css-0"
+          >
+            <td
+              class="css-xumdn4"
+              data-testid="status"
+            >
+              <svg
+                class="chakra-icon chakra-icon css-1jzaebn"
+                focusable="false"
+                viewBox="0 0 14 14"
+              >
+                <g
+                  fill="currentColor"
+                >
+                  <polygon
+                    points="5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039"
+                  />
+                </g>
+              </svg>
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="id"
+            >
+              50
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="customer_name"
+            >
+              Erin Mcintosh
+               / 
+              64
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="transaction_time"
+            >
+              2023-03-08 23:00:15
+            </td>
+            <td
+              class="css-xumdn4"
+              data-testid="currency"
+            >
+              $64.15
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div
+      class="css-365e8w"
+    >
+      <div
+        class="chakra-stack css-g9cw6v"
+      >
+        <button
+          class="chakra-button css-1jo2po0"
+          type="button"
+        >
+          1
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          2
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          3
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          4
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          5
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          6
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          7
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          8
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          9
+        </button>
+        <button
+          class="chakra-button css-1i07iq0"
+          type="button"
+        >
+          10
+        </button>
+      </div>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
