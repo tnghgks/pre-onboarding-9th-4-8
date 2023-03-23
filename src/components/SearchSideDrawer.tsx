@@ -63,7 +63,7 @@ const SearchSideDrawer = ({
 
         <DrawerBody>
           <Input
-            data-testid="searchInput"
+            data-testid="search-input"
             type="text"
             aria-hidden={true}
             placeholder="Customer name"

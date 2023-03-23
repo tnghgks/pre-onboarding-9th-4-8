@@ -15,7 +15,12 @@ const TablePagination = () => {
   );
 
   return (
-    <Stack spacing={2} direction="row" align="center">
+    <Stack
+      spacing={2}
+      direction="row"
+      align="center"
+      data-testid="table-pagenation"
+    >
       {generateOneToNArr(
         Math.ceil(orderResult.data.orderInfo.totalCount / ITEMS_PER_PAGE),
       ).map((num) => (
