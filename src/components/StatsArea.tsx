@@ -28,6 +28,8 @@ const StatsArea = () => {
     getParams('sort'),
   );
 
+  if (!orderResult) return <></>;
+
   const stats = [
     {
       label: 'Total Order',
@@ -85,7 +87,11 @@ const StatsArea = () => {
                 />
               </Center>
               <Stat>
-                <StatLabel>{stat.label}</StatLabel>
+                <StatLabel
+                  onClick={(e) => console.log(e.nativeEvent.currentTarget)}
+                >
+                  {stat.label}
+                </StatLabel>
                 <StatNumber>{stat.stat}</StatNumber>
                 <StatHelpText>{stat.helpText}</StatHelpText>
               </Stat>

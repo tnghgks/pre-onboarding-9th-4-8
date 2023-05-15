@@ -31,6 +31,8 @@ const OrderTableArea = () => {
     getParams('sort'),
   );
 
+  if (!orderResult) return <></>;
+
   return (
     <Box bg="white" w="100%" borderRadius="md" boxShadow="lg">
       <Box p="1em 2em">
