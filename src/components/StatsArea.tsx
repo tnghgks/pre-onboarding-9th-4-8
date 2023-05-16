@@ -27,14 +27,14 @@ const StatsArea = () => {
     getParams('filter'),
     getParams('sort'),
   );
-
-  if (!orderResult) return <></>;
+  console.log(orderResult.data);
+  if (!orderResult.data) return <></>;
 
   const stats = [
     {
       label: 'Total Order',
       'data-testid': 'total-order',
-      stat: orderResult.data.orderInfo.totalCount || 0,
+      stat: orderResult.data.orderInfo?.totalCount || 0,
       icon: IoIosPeople,
       iconColor: 'blue.900',
       helpText: `${orderResult.data.orderInfo.startDate} - ${orderResult.data.orderInfo.endDate}`,

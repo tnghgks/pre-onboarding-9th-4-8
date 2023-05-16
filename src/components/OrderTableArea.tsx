@@ -31,7 +31,7 @@ const OrderTableArea = () => {
     getParams('sort'),
   );
 
-  if (!orderResult) return <></>;
+  if (!orderResult.data) return <></>;
 
   return (
     <Box bg="white" w="100%" borderRadius="md" boxShadow="lg">
@@ -46,8 +46,8 @@ const OrderTableArea = () => {
           <TableCaption>
             {formatPageInfo(
               Number(getParams('page')),
-              orderResult.data.order.length || 0,
-              orderResult.data.orderInfo.totalCount || 0,
+              orderResult.data.order?.length || 0,
+              orderResult.data.orderInfo?.totalCount || 0,
             )}
           </TableCaption>
           <Thead>

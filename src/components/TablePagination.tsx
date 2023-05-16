@@ -14,6 +14,8 @@ const TablePagination = () => {
     getParams('sort'),
   );
 
+  if (!orderResult.data) return <></>;
+
   return (
     <Stack
       spacing={2}

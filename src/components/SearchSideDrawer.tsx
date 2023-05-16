@@ -38,6 +38,8 @@ const SearchSideDrawer = ({
     getParams('sort'),
   );
 
+  if (!customersResult.data) return <></>;
+
   const filterdCustomers = customersResult.data.filter((customer: string) =>
     formatPureString(customer).includes(formatPureString(searchName)),
   );

@@ -1,5 +1,7 @@
 import { useQueries } from '@tanstack/react-query';
 import { getCustomers, getOrderData } from '@/api/order';
+import { IOrderResult } from '@/interface/main';
+import queryClient from '@/lib/queryClient';
 
 const useOrderQuery = (
   page: string,
@@ -19,6 +21,12 @@ const useOrderQuery = (
         retry: 3,
         refetchInterval: 5000,
         staleTime: 5000,
+        onSuccess: (data: IOrderResult) => {
+          if (typeof data === 'string')
+            queryClient.invalidateQueries({
+              queryKey: ['/mock/order', page, date, customer, filter, sort],
+            });
+        },
       },
       {
         queryKey: ['/mock/customers'],

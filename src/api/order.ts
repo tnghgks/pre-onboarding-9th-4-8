@@ -1,4 +1,5 @@
 import { ITEMS_PER_PAGE } from '@/constants/units';
+import { ICustomer, IOrderResult } from '@/interface/main';
 import apiClient from './apiClient';
 
 export const getOrderData = async (
@@ -8,7 +9,7 @@ export const getOrderData = async (
   filter: string | null,
   sort: string | null,
 ) => {
-  return await apiClient({
+  return await apiClient<IOrderResult>({
     method: 'get',
     url: '/mock/order',
     params: {
@@ -23,7 +24,7 @@ export const getOrderData = async (
 };
 
 export const getCustomers = async () => {
-  return await apiClient({
+  return await apiClient<ICustomer>({
     method: 'get',
     url: '/mock/customers',
   });

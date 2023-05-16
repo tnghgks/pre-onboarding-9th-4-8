@@ -6,7 +6,15 @@ export interface IOrderItem {
   status: boolean;
   transaction_time: string;
 }
-
+export interface IOrderResult {
+  order: IOrderItem[];
+  orderInfo: IOrderInfo;
+  startDate: string;
+  endDate: string;
+}
+export interface ICustomer {
+  customers: string[];
+}
 export interface IOrderInfo {
   endDate: string;
   startDate: string;
