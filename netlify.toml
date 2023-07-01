@@ -1,0 +1,10 @@
+[[redirects]]
+from = "/mock/*"
+  to = "/mock/:splat"  
+  status = 200
+  force = true
+
+[[redirects]]
+from = "/*"
+  to = "/index"  
+  status = 200
